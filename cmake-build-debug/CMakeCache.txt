@@ -242,15 +242,6 @@ sensor_unit_IS_TOP_LEVEL:STATIC=ON
 sensor_unit_SOURCE_DIR:STATIC=C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit
 
 //Value Computed by CMake
-stm32f7xx-hal-driver_BINARY_DIR:STATIC=C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/External/stm32
-
-//Value Computed by CMake
-stm32f7xx-hal-driver_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-stm32f7xx-hal-driver_SOURCE_DIR:STATIC=C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/External/stm32
-
-//Value Computed by CMake
 stm32l0xx-hal-driver_BINARY_DIR:STATIC=C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/External/stm32
 
 //Value Computed by CMake
@@ -290,9 +281,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=c:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor 
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=29
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=30
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=6
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=5
 //Path to CMake executable.
 CMAKE_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/bin/cmake.exe
 //Path to cpack program executable.
@@ -381,7 +372,7 @@ CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.29
+CMAKE_ROOT:INTERNAL=C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG

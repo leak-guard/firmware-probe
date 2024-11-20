@@ -15,7 +15,6 @@ set(STARTUP_ASM "startup_stm32l031xx.s")
 
 file(GLOB_RECURSE SOURCES
         "Core/Src/*.*"
-        "Firmware/Src/*.*"
 )
 
 include_directories(

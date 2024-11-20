@@ -26,7 +26,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include "SX1278.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,7 +48,16 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+SX1278_hw_t SX1278_hw;
+SX1278_t SX1278;
 
+uint8_t master = 1;
+int ret;
+
+char buffer[512];
+
+int message;
+int message_length;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -95,13 +105,70 @@ int main(void)
   MX_SPI1_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
+  //initialize LoRa module
+  SX1278_hw.dio0.port = LORA_DIO0_GPIO_Port;
+  SX1278_hw.dio0.pin = LORA_DIO0_Pin;
+  SX1278_hw.nss.port = LORA_NSS_GPIO_Port;
+  SX1278_hw.nss.pin = LORA_NSS_Pin;
+  SX1278_hw.reset.port = LORA_RESET_GPIO_Port;
+  SX1278_hw.reset.pin = LORA_RESET_Pin;
+  SX1278_hw.spi = &hspi1;
 
+  SX1278.hw = &SX1278_hw;
+
+  printf("Configuring LoRa module\r\n");
+  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_7,
+              SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 8, SX127X_SYNC_WORD);
+  printf("Done configuring LoRaModule\r\n");
+
+  if (master == 1)
+  {
+    SX1278_LoRaEntryTx(&SX1278, 16, 2000);
+  }
+  else
+  {
+    SX1278_LoRaEntryRx(&SX1278, 16, 2000);
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    HAL_GPIO_TogglePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin);
+    HAL_Delay(1000);
+
+    if (master == 1)
+    {
+      printf("Master ...\r\n");
+      HAL_Delay(1000);
+      printf("Sending package...\r\n");
+
+      message_length = sprintf(buffer, "Hello %d", message);
+      ret = SX1278_LoRaEntryTx(&SX1278, message_length, 2000);
+      printf("Entry: %d\r\n", ret);
+
+      printf("Sending %s\r\n", buffer);
+      ret = SX1278_LoRaTxPacket(&SX1278, (uint8_t*) buffer, message_length, 2000);
+      message += 1;
+
+      printf("Transmission: %d\r\n", ret);
+      printf("Package sent...\r\n");
+    }
+    else
+    {
+      printf("Slave ...\r\n");
+      HAL_Delay(800);
+      printf("Receiving package...\r\n");
+
+      ret = SX1278_LoRaRxPacket(&SX1278);
+      printf("Received: %d\r\n", ret);
+      if (ret > 0) {
+        SX1278_read(&SX1278, (uint8_t*) buffer, ret);
+        printf("Content (%d): %s\r\n", ret, buffer);
+      }
+      printf("Package received ...\r\n");
+    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -144,7 +211,7 @@ void SystemClock_Config(void)
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV8;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;

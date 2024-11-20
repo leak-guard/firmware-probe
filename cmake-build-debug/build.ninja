@@ -137,6 +137,22 @@ build CMakeFiles/sensor_unit.elf.dir/Core/Src/system_stm32l0xx.c.obj: C_COMPILER
   OBJECT_DIR = CMakeFiles\sensor_unit.elf.dir
   OBJECT_FILE_DIR = CMakeFiles\sensor_unit.elf.dir\Core\Src
 
+build CMakeFiles/sensor_unit.elf.dir/Firmware/Src/SX1278.c.obj: C_COMPILER__sensor_unit.2eelf_unscanned_Debug C$:/Users/Philip/Documents/PWr/7$ semestr/ZPI/sensor$ unit$ L0/sensor_unit/Firmware/Src/SX1278.c || cmake_object_order_depends_target_sensor_unit.elf
+  DEFINES = -DARM_MATH_CM0 -DSTM32L031xx -DUSE_HAL_DRIVER -D_DEBUG -D__packed=__attribute__((__packed__)) -D__weak=__attribute__((weak))
+  DEP_FILE = CMakeFiles\sensor_unit.elf.dir\Firmware\Src\SX1278.c.obj.d
+  FLAGS = -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -g -std=gnu17 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/Core/Inc" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/Firmware/Inc" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/External/stm32/stm32l0xx-hal-driver/Inc" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/External/stm32/cmsis-core/Core/Include" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/External/stm32/cmsis-device-l0/Include"
+  OBJECT_DIR = CMakeFiles\sensor_unit.elf.dir
+  OBJECT_FILE_DIR = CMakeFiles\sensor_unit.elf.dir\Firmware\Src
+
+build CMakeFiles/sensor_unit.elf.dir/Firmware/Src/SX1278_hw.c.obj: C_COMPILER__sensor_unit.2eelf_unscanned_Debug C$:/Users/Philip/Documents/PWr/7$ semestr/ZPI/sensor$ unit$ L0/sensor_unit/Firmware/Src/SX1278_hw.c || cmake_object_order_depends_target_sensor_unit.elf
+  DEFINES = -DARM_MATH_CM0 -DSTM32L031xx -DUSE_HAL_DRIVER -D_DEBUG -D__packed=__attribute__((__packed__)) -D__weak=__attribute__((weak))
+  DEP_FILE = CMakeFiles\sensor_unit.elf.dir\Firmware\Src\SX1278_hw.c.obj.d
+  FLAGS = -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -g -std=gnu17 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/Core/Inc" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/Firmware/Inc" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/External/stm32/stm32l0xx-hal-driver/Inc" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/External/stm32/cmsis-core/Core/Include" -I"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/External/stm32/cmsis-device-l0/Include"
+  OBJECT_DIR = CMakeFiles\sensor_unit.elf.dir
+  OBJECT_FILE_DIR = CMakeFiles\sensor_unit.elf.dir\Firmware\Src
+
 build CMakeFiles/sensor_unit.elf.dir/startup_stm32l031xx.s.obj: ASM_COMPILER__sensor_unit.2eelf_unscanned_Debug C$:/Users/Philip/Documents/PWr/7$ semestr/ZPI/sensor$ unit$ L0/sensor_unit/startup_stm32l031xx.s || cmake_object_order_depends_target_sensor_unit.elf
   DEFINES = -DARM_MATH_CM0 -DSTM32L031xx -DUSE_HAL_DRIVER -D_DEBUG -D__packed=__attribute__((__packed__)) -D__weak=__attribute__((weak))
   DEP_FILE = CMakeFiles\sensor_unit.elf.dir\startup_stm32l031xx.s.obj.d
@@ -153,7 +169,7 @@ build CMakeFiles/sensor_unit.elf.dir/startup_stm32l031xx.s.obj: ASM_COMPILER__se
 #############################################
 # Link the executable sensor_unit.elf
 
-build sensor_unit.elf: C_EXECUTABLE_LINKER__sensor_unit.2eelf_Debug CMakeFiles/sensor_unit.elf.dir/Core/Src/adc.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/crc.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/gpio.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/lptim.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/main.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/spi.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/stm32l0xx_hal_msp.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/stm32l0xx_it.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/syscalls.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/sysmem.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/system_stm32l0xx.c.obj CMakeFiles/sensor_unit.elf.dir/startup_stm32l031xx.s.obj | External/stm32/libstm32l0xx-hal-driver.a || External/stm32/libstm32l0xx-hal-driver.a
+build sensor_unit.elf: C_EXECUTABLE_LINKER__sensor_unit.2eelf_Debug CMakeFiles/sensor_unit.elf.dir/Core/Src/adc.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/crc.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/gpio.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/lptim.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/main.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/spi.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/stm32l0xx_hal_msp.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/stm32l0xx_it.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/syscalls.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/sysmem.c.obj CMakeFiles/sensor_unit.elf.dir/Core/Src/system_stm32l0xx.c.obj CMakeFiles/sensor_unit.elf.dir/Firmware/Src/SX1278.c.obj CMakeFiles/sensor_unit.elf.dir/Firmware/Src/SX1278_hw.c.obj CMakeFiles/sensor_unit.elf.dir/startup_stm32l031xx.s.obj | External/stm32/libstm32l0xx-hal-driver.a || External/stm32/libstm32l0xx-hal-driver.a
   FLAGS = -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -g
   LINK_FLAGS = -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -Wl,-Map="C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/sensor_unit.map"
   LINK_LIBRARIES = External/stm32/libstm32l0xx-hal-driver.a

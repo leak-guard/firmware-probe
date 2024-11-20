@@ -80,4 +80,10 @@
 1661	2015	7538416292368686	CMakeFiles/sensor_unit.elf.dir/Core/Src/syscalls.c.obj	f6dd778f1284e28e
 1909	2168	7537620474560589	External/stm32/libstm32l0xx-hal-driver.a	75a0d6a842566aa6
 2170	2393	7538416297448636	sensor_unit.elf	94feac349b48ca8b
-6	358	7538416313085676	build.ninja	9a198088b6f129d7
+6	358	7538417927872732	build.ninja	9a198088b6f129d7
+55	336	7538420639538919	CMakeFiles/sensor_unit.elf.dir/Firmware/Src/SX1278_hw.c.obj	74db6c761b50a881
+49	347	7538420639478919	CMakeFiles/sensor_unit.elf.dir/Firmware/Src/SX1278.c.obj	a5cca9f5d81a7feb
+12	380	7538420639118949	CMakeFiles/sensor_unit.elf.dir/Core/Src/main.c.obj	ff1075d8c3a8e283
+380	669	7538420642794777	sensor_unit.elf	9e55825afd33f59e
+12	384	7538472426257621	CMakeFiles/sensor_unit.elf.dir/Core/Src/main.c.obj	ff1075d8c3a8e283
+384	643	7538472429978239	sensor_unit.elf	9e55825afd33f59e

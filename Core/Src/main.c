@@ -51,6 +51,10 @@
 /* USER CODE BEGIN PV */
 volatile uint8_t StopModeFlag = 1;
 volatile uint8_t WakeUpFlag = 0;
+volatile uint8_t AlarmActiveFlag = 0;
+
+uint32_t uid[3];
+char* device_id;
 
 SX1278_hw_t SX1278_hw;
 SX1278_t SX1278;
@@ -68,6 +72,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void EnterStopMode(void);
 void BlinkLED(void);
+void SendLoRaMessage(const char* msg);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -132,7 +137,6 @@ int main(void)
   HAL_Delay(100); // Wait for the module to sleep
 
   HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -146,7 +150,16 @@ int main(void)
 
     if (WakeUpFlag)
     {
-      BlinkLED();
+      if (AlarmActiveFlag)
+      {
+        SendLoRaMessage("02");
+        BlinkLED();
+      }
+      else
+      {
+        BlinkLED();
+      }
+
       WakeUpFlag = 0;
       StopModeFlag = 1;
     }
@@ -180,7 +193,7 @@ void SystemClock_Config(void)
   * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI
-                              |RCC_OSCILLATORTYPE_LSE;
+                                     |RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
@@ -194,7 +207,7 @@ void SystemClock_Config(void)
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV8;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -223,11 +236,27 @@ void HAL_RTCEx_WakeUpTimerEventCallback(RTC_HandleTypeDef *hrtc)
 }
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  if (GPIO_Pin == BTN_PING_Pin || GPIO_Pin == WATER_ALARM_IN_Pin)
+  if (GPIO_Pin == BTN_PING_Pin)
   {
     StopModeFlag = 0;
     WakeUpFlag = 1;
+    AlarmActiveFlag = 0;
   }
+  else if (GPIO_Pin == WATER_ALARM_IN_Pin)
+  {
+    StopModeFlag = 0;
+    WakeUpFlag = 1;
+    AlarmActiveFlag = 1;
+  }
+}
+
+void GetDeviceUID()
+{
+  uid[0] = HAL_GetUIDw0();
+  uid[1] = HAL_GetUIDw1();
+  uid[2] = HAL_GetUIDw2();
+
+  sprintf(device_id, "%08lX%08lX%08lX", uid[0], uid[1], uid[2]);
 }
 
 void EnterStopMode()
@@ -244,6 +273,24 @@ void EnterStopMode()
   HAL_ResumeTick();
 }
 
+void SendLoRaMessage(const char* msg)
+{
+  SX1278_standby(&SX1278);
+
+  HAL_Delay(200);
+
+  message_length = sprintf(buffer, "%s", msg);
+
+  if (SX1278_LoRaEntryTx(&SX1278, message_length, 2000))
+  {
+    SX1278_LoRaTxPacket(&SX1278, (uint8_t*)buffer, message_length, 2000);
+
+    HAL_Delay(100);
+  }
+
+  SX1278_sleep(&SX1278);
+}
+
 void BlinkLED()
 {
   HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
@@ -254,6 +301,11 @@ void BlinkLED()
     HAL_Delay(500);
     HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);    // Turn OFF
     HAL_Delay(500);
+
+    if (AlarmActiveFlag && (i % 5 == 0))
+    {
+      SendLoRaMessage("02");
+    }
   }
 }
 /* USER CODE END 4 */

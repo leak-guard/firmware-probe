@@ -21,6 +21,7 @@
 #include "adc.h"
 #include "crc.h"
 #include "lptim.h"
+#include "rtc.h"
 #include "spi.h"
 #include "gpio.h"
 
@@ -48,10 +49,12 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+volatile uint8_t StopModeFlag = 1;
+volatile uint8_t WakeUpFlag = 0;
+
 SX1278_hw_t SX1278_hw;
 SX1278_t SX1278;
 
-uint8_t master = 1;
 int ret;
 
 char buffer[512];
@@ -63,7 +66,8 @@ int message_length;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void EnterStopMode(void);
+void BlinkLED(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -104,7 +108,10 @@ int main(void)
   MX_LPTIM1_Init();
   MX_SPI1_Init();
   MX_CRC_Init();
+  MX_RTC_Init();
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
+
   //initialize LoRa module
   SX1278_hw.dio0.port = LORA_DIO0_GPIO_Port;
   SX1278_hw.dio0.pin = LORA_DIO0_Pin;
@@ -116,58 +123,32 @@ int main(void)
 
   SX1278.hw = &SX1278_hw;
 
-  printf("Configuring LoRa module\r\n");
   SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_7,
               SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 8, SX127X_SYNC_WORD);
-  printf("Done configuring LoRaModule\r\n");
 
-  if (master == 1)
-  {
-    SX1278_LoRaEntryTx(&SX1278, 16, 2000);
-  }
-  else
-  {
-    SX1278_LoRaEntryRx(&SX1278, 16, 2000);
-  }
+  SX1278_LoRaEntryTx(&SX1278, 16, 2000);
+
+  SX1278_sleep(&SX1278);
+  HAL_Delay(100); // Wait for the module to sleep
+
+  HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    HAL_GPIO_TogglePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin);
-    HAL_Delay(1000);
-
-    if (master == 1)
+    if (StopModeFlag)
     {
-      printf("Master ...\r\n");
-      HAL_Delay(1000);
-      printf("Sending package...\r\n");
-
-      message_length = sprintf(buffer, "Hello %d", message);
-      ret = SX1278_LoRaEntryTx(&SX1278, message_length, 2000);
-      printf("Entry: %d\r\n", ret);
-
-      printf("Sending %s\r\n", buffer);
-      ret = SX1278_LoRaTxPacket(&SX1278, (uint8_t*) buffer, message_length, 2000);
-      message += 1;
-
-      printf("Transmission: %d\r\n", ret);
-      printf("Package sent...\r\n");
+      EnterStopMode();
     }
-    else
-    {
-      printf("Slave ...\r\n");
-      HAL_Delay(800);
-      printf("Receiving package...\r\n");
 
-      ret = SX1278_LoRaRxPacket(&SX1278);
-      printf("Received: %d\r\n", ret);
-      if (ret > 0) {
-        SX1278_read(&SX1278, (uint8_t*) buffer, ret);
-        printf("Content (%d): %s\r\n", ret, buffer);
-      }
-      printf("Package received ...\r\n");
+    if (WakeUpFlag)
+    {
+      BlinkLED();
+      WakeUpFlag = 0;
+      StopModeFlag = 1;
     }
     /* USER CODE END WHILE */
 
@@ -198,10 +179,12 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI
+                              |RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -211,7 +194,7 @@ void SystemClock_Config(void)
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV8;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -221,7 +204,8 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_LPTIM1;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC|RCC_PERIPHCLK_LPTIM1;
+  PeriphClkInit.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
   PeriphClkInit.LptimClockSelection = RCC_LPTIM1CLKSOURCE_LSE;
 
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
@@ -231,7 +215,47 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_RTCEx_WakeUpTimerEventCallback(RTC_HandleTypeDef *hrtc)
+{
+  StopModeFlag = 0;
+  BlinkLED();
+  StopModeFlag = 1;
+}
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == BTN_PING_Pin || GPIO_Pin == WATER_ALARM_IN_Pin)
+  {
+    StopModeFlag = 0;
+    WakeUpFlag = 1;
+  }
+}
 
+void EnterStopMode()
+{
+  HAL_SuspendTick();
+
+  // HAL_PWR_EnableSleepOnExit();
+
+  HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+
+  // HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
+
+  SystemClock_Config();
+  HAL_ResumeTick();
+}
+
+void BlinkLED()
+{
+  HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+
+  for (uint8_t i = 0; i < 10; i++)
+  {
+    HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);  // Turn ON
+    HAL_Delay(500);
+    HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);    // Turn OFF
+    HAL_Delay(500);
+  }
+}
 /* USER CODE END 4 */
 
 /**

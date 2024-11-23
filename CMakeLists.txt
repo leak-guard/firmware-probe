@@ -54,7 +54,7 @@ if (CMAKE_HOST_WIN32)
             SOURCES openocd.cfg
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
-else ()
+else()
     add_custom_target(flash
             COMMAND openocd -f openocd.cfg -c init -c targets -c "reset init" -c "flash write_image erase ${HEX_FILE}" -c "reset run" -c shutdown
             DEPENDS ${PROJECT_NAME}.elf
@@ -62,7 +62,7 @@ else ()
             SOURCES openocd.cfg
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
-endif ()
+endif()
 
 add_custom_target(flashonly
         COMMAND openocd -f openocd.cfg -c init -c targets -c "reset init" -c "flash write_image erase ${HEX_FILE}" -c "reset run" -c shutdown

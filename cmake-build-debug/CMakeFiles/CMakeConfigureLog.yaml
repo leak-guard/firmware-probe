@@ -37,7 +37,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.out
+        C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.out
       
   -
     kind: "message-v1"
@@ -89,7 +89,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
       
       The CXX compiler identification is GNU, found in:
-        C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.o
+        C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.o
       
   -
     kind: "message-v1"
@@ -113,20 +113,20 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lh46cm"
-      binary: "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lh46cm"
+      source: "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sbgx4a"
+      binary: "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sbgx4a"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys"
       CMAKE_C_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: "-Wl,-gc-sections -T \"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld\""
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-gc-sections -T \"C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld\""
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lh46cm'
+        Change Dir: 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sbgx4a'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_1bd66
-        [1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c"
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_dfbef
+        [1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c"
         Using built-in specs.
         Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nosys.specs
         rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
@@ -140,8 +140,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (GCC) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_1bd66.dir/'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_1bd66.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -fdiagnostics-color=always -ffunction-sections -fdata-sections -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccvVpkT6.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/'
+         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_dfbef.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -fdiagnostics-color=always -ffunction-sections -fdata-sections -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccwQ6qDW.s
         GNU C17 (GCC) version 13.3.0 (arm-none-eabi)
         	compiled by GNU C version 14.1.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -159,13 +159,13 @@ events:
          C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include
         End of search list.
         Compiler executable checksum: 06d5b55308da34f3882b0147b89ed8ab
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_1bd66.dir/'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccvVpkT6.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/'
+         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccwQ6qDW.s
         GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (GNU Binutils) 2.43.1
         COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.'\x0d
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj -o cmTC_1bd66   && cd ."
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.'\x0d
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj -o cmTC_dfbef   && cd ."
         Using built-in specs.
         Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nosys.specs
         rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
@@ -182,8 +182,8 @@ events:
         gcc version 13.3.0 (GCC) 
         COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_1bd66' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_1bd66.'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccu4haPf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -X -o cmTC_1bd66 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -lnosys -gc-sections CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o -T C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_dfbef' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_dfbef.'
+         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccWxfn6f.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -X -o cmTC_dfbef C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -lnosys -gc-sections CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o -T C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld
         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): in function `_close_r':
         c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/closer.c:47:(.text+0xc): warning: _close is not implemented and will always fail
         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): note: the message above does not take linker garbage collection into account
@@ -197,8 +197,8 @@ events:
         c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/writer.c:49:(.text+0x10): warning: _write is not implemented and will always fail
         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): note: the message above does not take linker garbage collection into account
         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_1bd66 has a LOAD segment with RWX permissions\x0d
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_1bd66' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_1bd66.'\x0d
+        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_dfbef has a LOAD segment with RWX permissions\x0d
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_dfbef' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_dfbef.'\x0d
         
       exitCode: 0
   -
@@ -231,10 +231,10 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lh46cm']
+        ignore line: [Change Dir: 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sbgx4a']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_1bd66]
-        ignore line: [[1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c"]
+        ignore line: [Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_dfbef]
+        ignore line: [[1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c"]
         ignore line: [Using built-in specs.]
         ignore line: [Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nosys.specs]
         ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
@@ -248,8 +248,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_1bd66.dir/']
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_1bd66.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -fdiagnostics-color=always -ffunction-sections -fdata-sections -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccvVpkT6.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/']
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_dfbef.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -fdiagnostics-color=always -ffunction-sections -fdata-sections -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccwQ6qDW.s]
         ignore line: [GNU C17 (GCC) version 13.3.0 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version 14.1.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -267,8 +267,8 @@ events:
         ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 06d5b55308da34f3882b0147b89ed8ab]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_1bd66.dir/']
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccvVpkT6.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/']
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccwQ6qDW.s]
         ignore line: [GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (GNU Binutils) 2.43.1]
         ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
@@ -278,8 +278,8 @@ events:
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.'\x0d]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -Wl -gc-sections -T "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj -o cmTC_1bd66   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.'\x0d]
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -Wl -gc-sections -T "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj -o cmTC_dfbef   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nosys.specs]
         ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
@@ -302,13 +302,13 @@ events:
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_1bd66' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_1bd66.']
-        link line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccu4haPf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -X -o cmTC_1bd66 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -lnosys -gc-sections CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o -T C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_dfbef' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_dfbef.']
+        link line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccWxfn6f.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -X -o cmTC_dfbef C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -lnosys -gc-sections CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o -T C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld]
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccu4haPf.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccWxfn6f.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc_nano] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -319,7 +319,7 @@ events:
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
           arg [-X] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_1bd66] ==> ignore
+          arg [cmTC_dfbef] ==> ignore
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o]
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o]
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o]
@@ -330,7 +330,7 @@ events:
           arg [-LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib]
           arg [-lnosys] ==> lib [nosys]
           arg [-gc-sections] ==> ignore
-          arg [CMakeFiles/cmTC_1bd66.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [--start-group] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lc_nano] ==> lib [c_nano]
@@ -348,10 +348,7 @@ events:
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o]
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o]
           arg [-T] ==> ignore
-          arg [C:/Users/Philip/Documents/PWr/7] ==> ignore
-          arg [semestr/ZPI/sensor] ==> ignore
-          arg [unit] ==> ignore
-          arg [L0/sensor_unit/STM32L031K6Tx_FLASH.ld] ==> ignore
+          arg [C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld] ==> ignore
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): in function `_close_r':]
         ignore line: [c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/closer.c:47:(.text+0xc): warning: _close is not implemented and will always fail]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): note: the message above does not take linker garbage collection into account]
@@ -366,8 +363,8 @@ events:
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): note: the message above does not take linker garbage collection into account]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler]
         ignore line: [ defaulting to 08000000]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_1bd66 has a LOAD segment with RWX permissions\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_1bd66' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_1bd66.'\x0d]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_dfbef has a LOAD segment with RWX permissions\x0d]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_dfbef' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_dfbef.'\x0d]
         ignore line: []
         ignore line: []
         collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o]
@@ -395,21 +392,21 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-clodg3"
-      binary: "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-clodg3"
+      source: "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-pwuxjk"
+      binary: "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-pwuxjk"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
-      CMAKE_EXE_LINKER_FLAGS: "-Wl,-gc-sections -T \"C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld\""
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-gc-sections -T \"C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld\""
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-clodg3'
+        Change Dir: 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-pwuxjk'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_0d115
-        [1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_b4b0a
+        [1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe
         Target: arm-none-eabi
@@ -417,8 +414,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (GCC) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0d115.dir/'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1plus.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0d115.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccrZUwU5.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/'
+         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1plus.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b4b0a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccjngtBy.s
         GNU C++17 (GCC) version 13.3.0 (arm-none-eabi)
         	compiled by GNU C version 14.1.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -441,13 +438,13 @@ events:
          C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include
         End of search list.
         Compiler executable checksum: 7ba66b05935959252c401a92563e75ee
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0d115.dir/'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccrZUwU5.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/'
+         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccjngtBy.s
         GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (GNU Binutils) 2.43.1
         COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/\x0d
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.'\x0d
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe  -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_0d115   && cd ."
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.'\x0d
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe  -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_b4b0a   && cd ."
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe
         COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe
@@ -458,11 +455,11 @@ events:
         gcc version 13.3.0 (GCC) 
         COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_0d115' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_0d115.'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccMv22Ne.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -X -o cmTC_0d115 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -gc-sections CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o -T C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld
+        COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_b4b0a' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_b4b0a.'
+         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccpsanHO.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -X -o cmTC_b4b0a C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -gc-sections CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o -T C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld
         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000\x0d
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_0d115 has a LOAD segment with RWX permissions\x0d
-        COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_0d115' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_0d115.'\x0d
+        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_b4b0a has a LOAD segment with RWX permissions\x0d
+        COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_b4b0a' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_b4b0a.'\x0d
         
       exitCode: 0
   -
@@ -501,10 +498,10 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-clodg3']
+        ignore line: [Change Dir: 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-pwuxjk']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_0d115]
-        ignore line: [[1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_b4b0a]
+        ignore line: [[1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe]
         ignore line: [Target: arm-none-eabi]
@@ -512,8 +509,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0d115.dir/']
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1plus.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0d115.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccrZUwU5.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/']
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1plus.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b4b0a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccjngtBy.s]
         ignore line: [GNU C++17 (GCC) version 13.3.0 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version 14.1.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -536,8 +533,8 @@ events:
         ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 7ba66b05935959252c401a92563e75ee]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0d115.dir/']
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccrZUwU5.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/']
+        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccjngtBy.s]
         ignore line: [GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (GNU Binutils) 2.43.1]
         ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
@@ -545,8 +542,8 @@ events:
         ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.'\x0d]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe  -Wl -gc-sections -T "C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_0d115   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.'\x0d]
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe  -Wl -gc-sections -T "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_b4b0a   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe]
@@ -561,18 +558,18 @@ events:
         ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_0d115' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_0d115.']
-        link line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccMv22Ne.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -X -o cmTC_0d115 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -gc-sections CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o -T C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld]
+        ignore line: [COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_b4b0a' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_b4b0a.']
+        link line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccpsanHO.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -X -o cmTC_b4b0a C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -gc-sections CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o -T C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld]
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccMv22Ne.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccpsanHO.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-X] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_0d115] ==> ignore
+          arg [cmTC_b4b0a] ==> ignore
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o]
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o]
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o]
@@ -580,7 +577,7 @@ events:
           arg [-LC:/msys64/mingw64/bin/../lib/gcc] ==> dir [C:/msys64/mingw64/bin/../lib/gcc]
           arg [-LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib]
           arg [-gc-sections] ==> ignore
-          arg [CMakeFiles/cmTC_0d115.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [--start-group] ==> ignore
@@ -590,14 +587,11 @@ events:
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o]
           arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o]
           arg [-T] ==> ignore
-          arg [C:/Users/Philip/Documents/PWr/7] ==> ignore
-          arg [semestr/ZPI/sensor] ==> ignore
-          arg [unit] ==> ignore
-          arg [L0/sensor_unit/STM32L031K6Tx_FLASH.ld] ==> ignore
+          arg [C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld] ==> ignore
         ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler]
         ignore line: [ defaulting to 08000000\x0d]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_0d115 has a LOAD segment with RWX permissions\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7 semestr/ZPI/sensor unit L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_0d115' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_0d115.'\x0d]
+        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_b4b0a has a LOAD segment with RWX permissions\x0d]
+        ignore line: [COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_b4b0a' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_b4b0a.'\x0d]
         ignore line: []
         ignore line: []
         collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crti.o]

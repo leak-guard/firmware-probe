@@ -38,7 +38,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define ADC_FS              4095U       // ADC in 12bit resolution
+#define VREF_MEAS_MV        3000U       // VDDA voltage during VREFINT factory calibration in mV.
 
+#define VREFINT_CAL         (*((uint16_t *)0x1FF80078)) // DS12323 Table 17.
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,6 +52,12 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+static uint16_t adcIn17Raw = 0;
+static uint16_t VDDAmV = 0;
+static uint16_t VREFINTmV = 0;
+
+char battery_id[15];
+
 volatile uint8_t StopModeFlag = 1;
 volatile uint8_t WakeUpFlag = 0;
 volatile uint8_t AlarmActiveFlag = 0;
@@ -75,9 +84,10 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void GetDeviceUID(void);
 void ReadDIPSwitch(void);
+void MeasureBatteryVoltage(void);
 void EnterStopMode(void);
-void BlinkLED(void);
 void SendLoRaMessage(const char* msg);
+void BlinkLED(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -160,7 +170,8 @@ int main(void)
       if (PingFlag)
       {
         ReadDIPSwitch();
-        sprintf(buffer, "%s, %s", device_id, dip_id);
+        MeasureBatteryVoltage();
+        sprintf(buffer, "%s, %s, %s", device_id, dip_id, battery_id);
         SendLoRaMessage(buffer);
         BlinkLED();
         PingFlag = 0;
@@ -291,6 +302,21 @@ void ReadDIPSwitch()
 
   sprintf(dip_id, "DIP:%u", dip_switch);
 }
+
+void MeasureBatteryVoltage()
+{
+  HAL_ADCEx_Calibration_Start(&hadc, ADC_SINGLE_ENDED);
+  HAL_ADC_Start(&hadc);
+
+  HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
+  adcIn17Raw = HAL_ADC_GetValue(&hadc);
+  VDDAmV = (VREF_MEAS_MV * VREFINT_CAL) / adcIn17Raw;
+  VREFINTmV = (VDDAmV * adcIn17Raw) / ADC_FS;
+
+  sprintf(battery_id, "BAT:%umV", VDDAmV);
+  HAL_ADC_Stop(&hadc);
+}
+
 
 void EnterStopMode()
 {

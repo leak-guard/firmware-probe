@@ -52,9 +52,10 @@
 volatile uint8_t StopModeFlag = 1;
 volatile uint8_t WakeUpFlag = 0;
 volatile uint8_t AlarmActiveFlag = 0;
+volatile uint8_t PingFlag = 0;
 
 uint32_t uid[3];
-char* device_id;
+char device_id[30];
 
 SX1278_hw_t SX1278_hw;
 SX1278_t SX1278;
@@ -70,6 +71,7 @@ int message_length;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+void GetDeviceUID(void);
 void EnterStopMode(void);
 void BlinkLED(void);
 void SendLoRaMessage(const char* msg);
@@ -117,6 +119,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
 
+  GetDeviceUID();
+
   //initialize LoRa module
   SX1278_hw.dio0.port = LORA_DIO0_GPIO_Port;
   SX1278_hw.dio0.pin = LORA_DIO0_Pin;
@@ -150,7 +154,13 @@ int main(void)
 
     if (WakeUpFlag)
     {
-      if (AlarmActiveFlag)
+      if (PingFlag)
+      {
+        SendLoRaMessage(device_id);
+        BlinkLED();
+        PingFlag = 0;
+      }
+      else if (AlarmActiveFlag)
       {
         SendLoRaMessage("02");
         BlinkLED();
@@ -241,12 +251,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     StopModeFlag = 0;
     WakeUpFlag = 1;
     AlarmActiveFlag = 0;
+    PingFlag = 1;
   }
   else if (GPIO_Pin == WATER_ALARM_IN_Pin)
   {
     StopModeFlag = 0;
     WakeUpFlag = 1;
     AlarmActiveFlag = 1;
+    PingFlag = 0;
   }
 }
 
@@ -256,7 +268,7 @@ void GetDeviceUID()
   uid[1] = HAL_GetUIDw1();
   uid[2] = HAL_GetUIDw2();
 
-  sprintf(device_id, "%08lX%08lX%08lX", uid[0], uid[1], uid[2]);
+  sprintf(device_id, "ID:%lu-%lu-%lu", uid[2], uid[1], uid[0]);
 }
 
 void EnterStopMode()

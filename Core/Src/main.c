@@ -57,6 +57,8 @@ volatile uint8_t PingFlag = 0;
 uint32_t uid[3];
 char device_id[30];
 
+char dip_id[10];
+
 SX1278_hw_t SX1278_hw;
 SX1278_t SX1278;
 
@@ -72,6 +74,7 @@ int message_length;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void GetDeviceUID(void);
+void ReadDIPSwitch(void);
 void EnterStopMode(void);
 void BlinkLED(void);
 void SendLoRaMessage(const char* msg);
@@ -156,7 +159,9 @@ int main(void)
     {
       if (PingFlag)
       {
-        SendLoRaMessage(device_id);
+        ReadDIPSwitch();
+        sprintf(buffer, "%s, %s", device_id, dip_id);
+        SendLoRaMessage(buffer);
         BlinkLED();
         PingFlag = 0;
       }
@@ -203,7 +208,7 @@ void SystemClock_Config(void)
   * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI
-                                     |RCC_OSCILLATORTYPE_LSE;
+                              |RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
@@ -217,7 +222,7 @@ void SystemClock_Config(void)
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV8;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -269,6 +274,22 @@ void GetDeviceUID()
   uid[2] = HAL_GetUIDw2();
 
   sprintf(device_id, "ID:%lu-%lu-%lu", uid[2], uid[1], uid[0]);
+}
+
+void ReadDIPSwitch()
+{
+  uint8_t dip_switch = 0;
+
+  dip_switch = HAL_GPIO_ReadPin(ADDR0_GPIO_Port, ADDR0_Pin) << 0;
+  dip_switch |= HAL_GPIO_ReadPin(ADDR1_GPIO_Port, ADDR1_Pin) << 1;
+  dip_switch |= HAL_GPIO_ReadPin(ADDR2_GPIO_Port, ADDR2_Pin) << 2;
+  dip_switch |= HAL_GPIO_ReadPin(ADDR3_GPIO_Port, ADDR3_Pin) << 3;
+  dip_switch |= HAL_GPIO_ReadPin(ADDR4_GPIO_Port, ADDR4_Pin) << 4;
+  dip_switch |= HAL_GPIO_ReadPin(ADDR5_GPIO_Port, ADDR5_Pin) << 5;
+  dip_switch |= HAL_GPIO_ReadPin(ADDR6_GPIO_Port, ADDR6_Pin) << 6;
+  dip_switch |= HAL_GPIO_ReadPin(ADDR7_GPIO_Port, ADDR7_Pin) << 7;
+
+  sprintf(dip_id, "DIP:%u", dip_switch);
 }
 
 void EnterStopMode()

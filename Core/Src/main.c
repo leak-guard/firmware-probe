@@ -26,6 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stm32l0xx_ll_gpio.h>
 #include <stdio.h>
 #include "SX1278.h"
 /* USER CODE END Includes */
@@ -283,16 +284,7 @@ void GetDeviceUID()
 
 void ReadDIPSwitch()
 {
-  uint8_t dip_switch = 0;
-
-  dip_switch = HAL_GPIO_ReadPin(ADDR0_GPIO_Port, ADDR0_Pin) << 0;
-  dip_switch |= HAL_GPIO_ReadPin(ADDR1_GPIO_Port, ADDR1_Pin) << 1;
-  dip_switch |= HAL_GPIO_ReadPin(ADDR2_GPIO_Port, ADDR2_Pin) << 2;
-  dip_switch |= HAL_GPIO_ReadPin(ADDR3_GPIO_Port, ADDR3_Pin) << 3;
-  dip_switch |= HAL_GPIO_ReadPin(ADDR4_GPIO_Port, ADDR4_Pin) << 4;
-  dip_switch |= HAL_GPIO_ReadPin(ADDR5_GPIO_Port, ADDR5_Pin) << 5;
-  dip_switch |= HAL_GPIO_ReadPin(ADDR6_GPIO_Port, ADDR6_Pin) << 6;
-  dip_switch |= HAL_GPIO_ReadPin(ADDR7_GPIO_Port, ADDR7_Pin) << 7;
+  uint8_t dip_switch = LL_GPIO_ReadInputPort(ADDR0_GPIO_Port) & 0xFF;
 
   sprintf(dip_id, "DIP:%u", dip_switch);
 }

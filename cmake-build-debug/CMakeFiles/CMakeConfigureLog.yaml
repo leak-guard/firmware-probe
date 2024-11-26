@@ -4,7 +4,7 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:200 (message)"
       - "CMakeLists.txt:7 (project)"
     message: |
       The target system is: Generic - 1 - cortex-m0plus
@@ -12,73 +12,73 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:7 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: C:/msys64/mingw64/bin/arm-none-eabi-gcc.exe 
+      Compiler: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc.exe 
       Build flags: -mcpu=cortex-m0plus;-mthumb;-ffunction-sections;-fdata-sections;-specs=nosys.specs;-specs=nano.specs;-lnosys
       Id flags:  
       
       The output was:
       0
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): in function `_close_r':
-      c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/closer.c:47:(.text+0xc): warning: _close is not implemented and will always fail
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
-      c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/lseekr.c:49:(.text+0x10): warning: _lseek is not implemented and will always fail
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-readr.o): in function `_read_r':
-      c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/readr.c:49:(.text+0x10): warning: _read is not implemented and will always fail
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): in function `_write_r':
-      c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/writer.c:49:(.text+0x10): warning: _write is not implemented and will always fail
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): in function `_close_r':
+      (.text._close_r+0xc): warning: _close is not implemented and will always fail
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
+      (.text._lseek_r+0x10): warning: _lseek is not implemented and will always fail
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-readr.o): in function `_read_r':
+      (.text._read_r+0x10): warning: _read is not implemented and will always fail
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): in function `_write_r':
+      (.text._write_r+0x10): warning: _write is not implemented and will always fail
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.out
+        C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.out
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:7 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-      Compiler: C:/msys64/mingw64/bin/arm-none-eabi-c++.exe 
+      Compiler: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-c++.exe 
       Build flags: 
       Id flags:  
       
       The output was:
       1
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib\\libc.a(libc_a-exit.o): in function `exit':
-      C:\\M\\B\\src\\build-MINGW64\\arm-none-eabi\\newlib/../../../newlib-4.4.0.20231231/newlib/libc/stdlib/exit.c:65:(.text+0x28): undefined reference to `_exit'
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib\\libc.a(libc_a-closer.o): in function `_close_r':
-      C:\\M\\B\\src\\build-MINGW64\\arm-none-eabi\\newlib/../../../newlib-4.4.0.20231231/newlib/libc/reent/closer.c:47:(.text+0x18): undefined reference to `_close'
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib\\libc.a(libc_a-lseekr.o): in function `_lseek_r':
-      C:\\M\\B\\src\\build-MINGW64\\arm-none-eabi\\newlib/../../../newlib-4.4.0.20231231/newlib/libc/reent/lseekr.c:49:(.text+0x24): undefined reference to `_lseek'
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib\\libc.a(libc_a-readr.o): in function `_read_r':
-      C:\\M\\B\\src\\build-MINGW64\\arm-none-eabi\\newlib/../../../newlib-4.4.0.20231231/newlib/libc/reent/readr.c:49:(.text+0x24): undefined reference to `_read'
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib\\libc.a(libc_a-writer.o): in function `_write_r':
-      C:\\M\\B\\src\\build-MINGW64\\arm-none-eabi\\newlib/../../../newlib-4.4.0.20231231/newlib/libc/reent/writer.c:49:(.text+0x24): undefined reference to `_write'
-      C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib\\libc.a(libc_a-sbrkr.o): in function `_sbrk_r':
-      C:\\M\\B\\src\\build-MINGW64\\arm-none-eabi\\newlib/../../../newlib-4.4.0.20231231/newlib/libc/reent/sbrkr.c:51:(.text+0x18): undefined reference to `_sbrk'
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib\\libc.a(libc_a-exit.o): in function `exit':
+      (.text.exit+0x28): undefined reference to `_exit'
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib\\libc.a(libc_a-closer.o): in function `_close_r':
+      (.text._close_r+0x18): undefined reference to `_close'
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib\\libc.a(libc_a-lseekr.o): in function `_lseek_r':
+      (.text._lseek_r+0x20): undefined reference to `_lseek'
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib\\libc.a(libc_a-readr.o): in function `_read_r':
+      (.text._read_r+0x20): undefined reference to `_read'
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib\\libc.a(libc_a-writer.o): in function `_write_r':
+      (.text._write_r+0x20): undefined reference to `_write'
+      C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib\\libc.a(libc_a-sbrkr.o): in function `_sbrk_r':
+      (.text._sbrk_r+0x18): undefined reference to `_sbrk'
       collect2.exe: error: ld returned 1 exit status
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:7 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: C:/msys64/mingw64/bin/arm-none-eabi-c++.exe 
+      Compiler: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-c++.exe 
       Build flags: 
       Id flags: -c 
       
@@ -89,226 +89,242 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
       
       The CXX compiler identification is GNU, found in:
-        C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.o
+        C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.o
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:1192 (message)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:1192 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "CMakeLists.txt:7 (project)"
     message: |
       Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
-      arm-none-eabi-gcc.exe (GCC) 13.3.0
-      Copyright (C) 2023 Free Software Foundation, Inc.
+      arm-none-eabi-gcc.exe (GNU Tools for STM32 12.3.rel1.20240612-1315) 12.3.1 20230626
+      Copyright (C) 2022 Free Software Foundation, Inc.
       This is free software; see the source for copying conditions.  There is NO
       warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:7 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sbgx4a"
-      binary: "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sbgx4a"
+      source: "C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-evk4kl"
+      binary: "C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-evk4kl"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys"
       CMAKE_C_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: "-Wl,-gc-sections -T \"C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld\""
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-gc-sections -T \"C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld\""
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sbgx4a'
+        Change Dir: 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-evk4kl'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_dfbef
-        [1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c"
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.16.0/Ninja/bin/ninja.exe -v cmTC_29bac
+        [1/2] C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c"
         Using built-in specs.
-        Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nosys.specs
+        Reading specs from C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nosys.specs
         rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
-        Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nano.specs
+        Reading specs from C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nano.specs
         rename spec link to nano_link
         rename spec link_gcc_c_sequence to nano_link_gcc_c_sequence
         rename spec cpp_unique_options to nano_cpp_unique_options
-        COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe
+        COLLECT_GCC=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe
         Target: arm-none-eabi
-        Configured with: ../gcc-13.3.0/configure --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\\ -static-libgcc\\ \\ -Wl,--stack,12582912' LDFLAGS=' -Wl,--disable-dynamicbase'
+        Configured with: /build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/src/gcc/configure --build=x86_64-linux-gnu --host=x86_64-w64-mingw32 --target=arm-none-eabi --prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw --libexecdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib --infodir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/arm-none-eabi --with-libiconv-prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-gmp=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpfr=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpc=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-isl=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for STM32 12.3.rel1.20240612-1315' --with-multilib-list=rmprofile,aprofile
         Thread model: single
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (GCC) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_dfbef.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -fdiagnostics-color=always -ffunction-sections -fdata-sections -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccwQ6qDW.s
-        GNU C17 (GCC) version 13.3.0 (arm-none-eabi)
-        	compiled by GNU C version 14.1.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        Supported LTO compression algorithms: zlib
+        gcc version 12.3.1 20230626 (GNU Tools for STM32 12.3.rel1.20240612-1315) 
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_29bac.dir/'
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/ -isysroot C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_29bac.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -fdiagnostics-color=always -ffunction-sections -fdata-sections -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccooA7uF.s
+        GNU C17 (GNU Tools for STM32 12.3.rel1.20240612-1315) version 12.3.1 20230626 (arm-none-eabi)
+        	compiled by GNU C version 7.3-win32 20180312, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        ignoring nonexistent directory "=/include/newlib-nano"
-        ignoring nonexistent directory "C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/sys-include"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/include"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/include-fixed"
-        ignoring nonexistent directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/sys-include"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include"
+        ignoring nonexistent directory "C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib/gcc/arm-none-eabi/12.3.1/../../../../include"
+        ignoring nonexistent directory "C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/usr/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include-fixed
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/include/newlib-nano
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/include
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/include-fixed
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include-fixed
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include
         End of search list.
-        Compiler executable checksum: 06d5b55308da34f3882b0147b89ed8ab
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccwQ6qDW.s
-        GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (GNU Binutils) 2.43.1
-        COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/
-        LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.'\x0d
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj -o cmTC_dfbef   && cd ."
+        GNU C17 (GNU Tools for STM32 12.3.rel1.20240612-1315) version 12.3.1 20230626 (arm-none-eabi)
+        	compiled by GNU C version 7.3-win32 20180312, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 8c85bce3e8a10a7ec33a6a6bd0176b53
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_29bac.dir/'
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccooA7uF.s
+        GNU assembler version 2.40.0 (arm-none-eabi) using BFD version (GNU Tools for STM32 12.3.rel1.20240612-1315) 2.40.0.20230627
+        COMPILER_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/
+        LIBRARY_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.'\x0d
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj -o cmTC_29bac   && cd ."
         Using built-in specs.
-        Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nosys.specs
+        Reading specs from C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nosys.specs
         rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
-        Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nano.specs
+        Reading specs from C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nano.specs
         rename spec link to nano_link
         rename spec link_gcc_c_sequence to nano_link_gcc_c_sequence
         rename spec cpp_unique_options to nano_cpp_unique_options
-        COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe
-        COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe
+        COLLECT_GCC=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe
+        COLLECT_LTO_WRAPPER=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe
         Target: arm-none-eabi
-        Configured with: ../gcc-13.3.0/configure --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\\ -static-libgcc\\ \\ -Wl,--stack,12582912' LDFLAGS=' -Wl,--disable-dynamicbase'
+        Configured with: /build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/src/gcc/configure --build=x86_64-linux-gnu --host=x86_64-w64-mingw32 --target=arm-none-eabi --prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw --libexecdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib --infodir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/arm-none-eabi --with-libiconv-prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-gmp=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpfr=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpc=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-isl=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for STM32 12.3.rel1.20240612-1315' --with-multilib-list=rmprofile,aprofile
         Thread model: single
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (GCC) 
-        COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/
-        LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_dfbef' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_dfbef.'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccWxfn6f.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -X -o cmTC_dfbef C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -lnosys -gc-sections CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o -T C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): in function `_close_r':
-        c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/closer.c:47:(.text+0xc): warning: _close is not implemented and will always fail
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): note: the message above does not take linker garbage collection into account
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
-        c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/lseekr.c:49:(.text+0x10): warning: _lseek is not implemented and will always fail
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-lseekr.o): note: the message above does not take linker garbage collection into account
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-readr.o): in function `_read_r':
-        c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/readr.c:49:(.text+0x10): warning: _read is not implemented and will always fail
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-readr.o): note: the message above does not take linker garbage collection into account
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): in function `_write_r':
-        c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/writer.c:49:(.text+0x10): warning: _write is not implemented and will always fail
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): note: the message above does not take linker garbage collection into account
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_dfbef has a LOAD segment with RWX permissions\x0d
-        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_dfbef' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_dfbef.'\x0d
+        Supported LTO compression algorithms: zlib
+        gcc version 12.3.1 20230626 (GNU Tools for STM32 12.3.rel1.20240612-1315) 
+        COMPILER_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/
+        LIBRARY_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_29bac' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_29bac.'
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/collect2.exe -plugin C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/liblto_plugin.dll -plugin-opt=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccKTDwMS.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi -X -o cmTC_29bac C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1 -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib -lnosys -gc-sections CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o -T C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld
+        C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): in function `_close_r':
+        (.text._close_r+0xc): warning: _close is not implemented and will always fail
+        C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
+        (.text._lseek_r+0x10): warning: _lseek is not implemented and will always fail
+        C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-readr.o): in function `_read_r':
+        (.text._read_r+0x10): warning: _read is not implemented and will always fail
+        C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): in function `_write_r':
+        (.text._write_r+0x10): warning: _write is not implemented and will always fail
+        C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000
+        C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_29bac has a LOAD segment with RWX permissions\x0d
+        COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_29bac' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_29bac.'\x0d
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:7 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include]
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include-fixed]
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/include/newlib-nano]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/include]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include]
         end of search list found
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/include]
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include-fixed] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/include-fixed]
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include] ==> [C:/msys64/mingw64/arm-none-eabi/include]
-        implicit include dirs: [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/include;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/include-fixed;C:/msys64/mingw64/arm-none-eabi/include]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/include/newlib-nano] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/newlib-nano]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/include] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/include-fixed] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include-fixed] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include]
+        implicit include dirs: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/newlib-nano;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include-fixed;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include]
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:7 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sbgx4a']
+        ignore line: [Change Dir: 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-evk4kl']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_dfbef]
-        ignore line: [[1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c"]
+        ignore line: [Run Build Command(s): C:/ST/STM32CubeCLT_1.16.0/Ninja/bin/ninja.exe -v cmTC_29bac]
+        ignore line: [[1/2] C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe   -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c"]
         ignore line: [Using built-in specs.]
-        ignore line: [Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nosys.specs]
+        ignore line: [Reading specs from C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nosys.specs]
         ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
-        ignore line: [Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nano.specs]
+        ignore line: [Reading specs from C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nano.specs]
         ignore line: [rename spec link to nano_link]
         ignore line: [rename spec link_gcc_c_sequence to nano_link_gcc_c_sequence]
         ignore line: [rename spec cpp_unique_options to nano_cpp_unique_options]
-        ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe]
+        ignore line: [COLLECT_GCC=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe]
         ignore line: [Target: arm-none-eabi]
-        ignore line: [Configured with: ../gcc-13.3.0/configure --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\\ -static-libgcc\\ \\ -Wl,--stack,12582912' LDFLAGS=' -Wl,--disable-dynamicbase']
+        ignore line: [Configured with: /build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/src/gcc/configure --build=x86_64-linux-gnu --host=x86_64-w64-mingw32 --target=arm-none-eabi --prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw --libexecdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib --infodir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/arm-none-eabi --with-libiconv-prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-gmp=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpfr=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpc=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-isl=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for STM32 12.3.rel1.20240612-1315' --with-multilib-list=rmprofile,aprofile]
         ignore line: [Thread model: single]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/']
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_dfbef.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -fdiagnostics-color=always -ffunction-sections -fdata-sections -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccwQ6qDW.s]
-        ignore line: [GNU C17 (GCC) version 13.3.0 (arm-none-eabi)]
-        ignore line: [	compiled by GNU C version 14.1.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 12.3.1 20230626 (GNU Tools for STM32 12.3.rel1.20240612-1315) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_29bac.dir/']
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/cc1.exe -isystem =/include/newlib-nano -quiet -v -imultilib thumb/v6-m/nofp -iprefix C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/ -isysroot C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_29bac.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -mlibarch=armv6s-m -march=armv6s-m -version -fdiagnostics-color=always -ffunction-sections -fdata-sections -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccooA7uF.s]
+        ignore line: [GNU C17 (GNU Tools for STM32 12.3.rel1.20240612-1315) version 12.3.1 20230626 (arm-none-eabi)]
+        ignore line: [	compiled by GNU C version 7.3-win32 20180312  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-        ignore line: [ignoring nonexistent directory "=/include/newlib-nano"]
-        ignore line: [ignoring nonexistent directory "C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/sys-include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/include-fixed"]
-        ignore line: [ignoring nonexistent directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/sys-include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include"]
+        ignore line: [ignoring nonexistent directory "C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib/gcc/arm-none-eabi/12.3.1/../../../../include"]
+        ignore line: [ignoring nonexistent directory "C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/usr/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include-fixed]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/include/newlib-nano]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/include]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: 06d5b55308da34f3882b0147b89ed8ab]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/']
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccwQ6qDW.s]
-        ignore line: [GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (GNU Binutils) 2.43.1]
-        ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.'\x0d]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -Wl -gc-sections -T "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj -o cmTC_dfbef   && cd ."]
+        ignore line: [GNU C17 (GNU Tools for STM32 12.3.rel1.20240612-1315) version 12.3.1 20230626 (arm-none-eabi)]
+        ignore line: [	compiled by GNU C version 7.3-win32 20180312  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 8c85bce3e8a10a7ec33a6a6bd0176b53]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_29bac.dir/']
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv6s-m -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccooA7uF.s]
+        ignore line: [GNU assembler version 2.40.0 (arm-none-eabi) using BFD version (GNU Tools for STM32 12.3.rel1.20240612-1315) 2.40.0.20230627]
+        ignore line: [COMPILER_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/]
+        ignore line: [LIBRARY_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-v' '-o' 'CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj' '-c' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.'\x0d]
+        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys -Wl -gc-sections -T "C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj -o cmTC_29bac   && cd ."]
         ignore line: [Using built-in specs.]
-        ignore line: [Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nosys.specs]
+        ignore line: [Reading specs from C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nosys.specs]
         ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
-        ignore line: [Reading specs from C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/nano.specs]
+        ignore line: [Reading specs from C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/nano.specs]
         ignore line: [rename spec link to nano_link]
         ignore line: [rename spec link_gcc_c_sequence to nano_link_gcc_c_sequence]
         ignore line: [rename spec cpp_unique_options to nano_cpp_unique_options]
-        ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe]
-        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe]
+        ignore line: [COLLECT_GCC=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe]
         ignore line: [Target: arm-none-eabi]
-        ignore line: [Configured with: ../gcc-13.3.0/configure --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\\ -static-libgcc\\ \\ -Wl,--stack,12582912' LDFLAGS=' -Wl,--disable-dynamicbase']
+        ignore line: [Configured with: /build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/src/gcc/configure --build=x86_64-linux-gnu --host=x86_64-w64-mingw32 --target=arm-none-eabi --prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw --libexecdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib --infodir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/arm-none-eabi --with-libiconv-prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-gmp=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpfr=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpc=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-isl=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for STM32 12.3.rel1.20240612-1315' --with-multilib-list=rmprofile,aprofile]
         ignore line: [Thread model: single]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (GCC) ]
-        ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_dfbef' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_dfbef.']
-        link line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccWxfn6f.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -X -o cmTC_dfbef C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -lnosys -gc-sections CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o -T C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld]
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe] ==> ignore
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 12.3.1 20230626 (GNU Tools for STM32 12.3.rel1.20240612-1315) ]
+        ignore line: [COMPILER_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/]
+        ignore line: [LIBRARY_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_29bac' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_29bac.']
+        link line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/collect2.exe -plugin C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/liblto_plugin.dll -plugin-opt=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccKTDwMS.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc_nano -plugin-opt=-pass-through=-lnosys --sysroot=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi -X -o cmTC_29bac C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1 -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib -lnosys -gc-sections CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc_nano --end-group --start-group -lgcc -lc_nano -lnosys --end-group --start-group -lgcc -lc_nano -lnosys --end-group C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o -T C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll] ==> ignore
-          arg [-plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccWxfn6f.res] ==> ignore
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccKTDwMS.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc_nano] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -317,20 +333,23 @@ events:
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc_nano] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
+          arg [--sysroot=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi] ==> ignore
           arg [-X] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_dfbef] ==> ignore
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o]
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o]
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o]
-          arg [-LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp]
-          arg [-LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp]
-          arg [-LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0]
-          arg [-LC:/msys64/mingw64/bin/../lib/gcc] ==> dir [C:/msys64/mingw64/bin/../lib/gcc]
-          arg [-LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib]
+          arg [cmTC_29bac] ==> ignore
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib]
           arg [-lnosys] ==> lib [nosys]
           arg [-gc-sections] ==> ignore
-          arg [CMakeFiles/cmTC_dfbef.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_29bac.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [--start-group] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lc_nano] ==> lib [c_nano]
@@ -345,266 +364,291 @@ events:
           arg [-lc_nano] ==> lib [c_nano]
           arg [-lnosys] ==> lib [nosys]
           arg [--end-group] ==> ignore
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o]
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o]
           arg [-T] ==> ignore
-          arg [C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld] ==> ignore
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): in function `_close_r':]
-        ignore line: [c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/closer.c:47:(.text+0xc): warning: _close is not implemented and will always fail]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): note: the message above does not take linker garbage collection into account]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':]
-        ignore line: [c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/lseekr.c:49:(.text+0x10): warning: _lseek is not implemented and will always fail]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-lseekr.o): note: the message above does not take linker garbage collection into account]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-readr.o): in function `_read_r':]
-        ignore line: [c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/readr.c:49:(.text+0x10): warning: _read is not implemented and will always fail]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-readr.o): note: the message above does not take linker garbage collection into account]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): in function `_write_r':]
-        ignore line: [c:\\m\\b\\src\\newlib-4.4.0.20231231\\newlib\\libc\\reent/writer.c:49:(.text+0x10): warning: _write is not implemented and will always fail]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): note: the message above does not take linker garbage collection into account]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler]
+          arg [C:/Users/Philip/Documents/PWr/Studia/Sem] ==> ignore
+          arg [7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld] ==> ignore
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-closer.o): in function `_close_r':]
+        ignore line: [(.text._close_r+0xc): warning: _close is not implemented and will always fail]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':]
+        ignore line: [(.text._lseek_r+0x10): warning: _lseek is not implemented and will always fail]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-readr.o): in function `_read_r':]
+        ignore line: [(.text._read_r+0x10): warning: _read is not implemented and will always fail]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\\libc_nano.a(libc_a-writer.o): in function `_write_r':]
+        ignore line: [(.text._write_r+0x10): warning: _write is not implemented and will always fail]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler]
         ignore line: [ defaulting to 08000000]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_dfbef has a LOAD segment with RWX permissions\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_dfbef' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_dfbef.'\x0d]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_29bac has a LOAD segment with RWX permissions\x0d]
+        ignore line: [COLLECT_GCC_OPTIONS='-mcpu=cortex-m0plus' '-mthumb' '-ffunction-sections' '-fdata-sections' '-specs=nosys.specs' '-specs=nano.specs' '-T' 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_29bac' '-mfloat-abi=soft' '-mlibarch=armv6s-m' '-march=armv6s-m' '-dumpdir' 'cmTC_29bac.'\x0d]
         ignore line: []
         ignore line: []
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o]
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o]
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o] ==> [C:/msys64/mingw64/arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o]
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o]
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o]
-        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp]
-        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/msys64/mingw64/arm-none-eabi/lib/thumb/v6-m/nofp]
-        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0]
-        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc] ==> [C:/msys64/mingw64/lib/gcc]
-        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib] ==> [C:/msys64/mingw64/arm-none-eabi/lib]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib/thumb/v6-m/nofp]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/thumb/v6-m/nofp] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib/thumb/v6-m/nofp]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib]
         implicit libs: [nosys;gcc;c_nano;gcc;c_nano;nosys;gcc;c_nano;nosys]
-        implicit objs: [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crti.o;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtbegin.o;C:/msys64/mingw64/arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtend.o;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp/crtn.o]
-        implicit dirs: [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/thumb/v6-m/nofp;C:/msys64/mingw64/arm-none-eabi/lib/thumb/v6-m/nofp;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0;C:/msys64/mingw64/lib/gcc;C:/msys64/mingw64/arm-none-eabi/lib]
+        implicit objs: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o]
+        implicit dirs: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib/thumb/v6-m/nofp;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib]
         implicit fwks: []
       
       
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:7 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-pwuxjk"
-      binary: "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-pwuxjk"
+      source: "C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wdwb46"
+      binary: "C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wdwb46"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
-      CMAKE_EXE_LINKER_FLAGS: "-Wl,-gc-sections -T \"C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld\""
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-gc-sections -T \"C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld\""
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-pwuxjk'
+        Change Dir: 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wdwb46'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_b4b0a
-        [1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.16.0/Ninja/bin/ninja.exe -v cmTC_67cf1
+        [1/2] C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-c++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
         Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe
+        COLLECT_GCC=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-c++.exe
         Target: arm-none-eabi
-        Configured with: ../gcc-13.3.0/configure --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\\ -static-libgcc\\ \\ -Wl,--stack,12582912' LDFLAGS=' -Wl,--disable-dynamicbase'
+        Configured with: /build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/src/gcc/configure --build=x86_64-linux-gnu --host=x86_64-w64-mingw32 --target=arm-none-eabi --prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw --libexecdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib --infodir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/arm-none-eabi --with-libiconv-prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-gmp=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpfr=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpc=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-isl=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for STM32 12.3.rel1.20240612-1315' --with-multilib-list=rmprofile,aprofile
         Thread model: single
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (GCC) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1plus.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b4b0a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccjngtBy.s
-        GNU C++17 (GCC) version 13.3.0 (arm-none-eabi)
-        	compiled by GNU C version 14.1.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        Supported LTO compression algorithms: zlib
+        gcc version 12.3.1 20230626 (GNU Tools for STM32 12.3.rel1.20240612-1315) 
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_67cf1.dir/'
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/cc1plus.exe -quiet -v -iprefix C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/ -isysroot C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_67cf1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccfDJm7d.s
+        GNU C++17 (GNU Tools for STM32 12.3.rel1.20240612-1315) version 12.3.1 20230626 (arm-none-eabi)
+        	compiled by GNU C version 7.3-win32 20180312, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        ignoring nonexistent directory "C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/sys-include"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/arm-none-eabi"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/backward"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/include"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/include-fixed"
-        ignoring nonexistent directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/sys-include"
-        ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include"
+        ignoring nonexistent directory "C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib/gcc/arm-none-eabi/12.3.1/../../../../include"
+        ignoring nonexistent directory "C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/usr/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/arm-none-eabi
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/backward
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include-fixed
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/arm-none-eabi
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/backward
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/include
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/include-fixed
+         C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/arm-none-eabi
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/backward
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include-fixed
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include
         End of search list.
-        Compiler executable checksum: 7ba66b05935959252c401a92563e75ee
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccjngtBy.s
-        GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (GNU Binutils) 2.43.1
-        COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/
-        LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/\x0d
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.'\x0d
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe  -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_b4b0a   && cd ."
+        GNU C++17 (GNU Tools for STM32 12.3.rel1.20240612-1315) version 12.3.1 20230626 (arm-none-eabi)
+        	compiled by GNU C version 7.3-win32 20180312, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: e40f213a8b38594a68f1558fe98e1d38
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_67cf1.dir/'
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccfDJm7d.s
+        GNU assembler version 2.40.0 (arm-none-eabi) using BFD version (GNU Tools for STM32 12.3.rel1.20240612-1315) 2.40.0.20230627
+        COMPILER_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/
+        LIBRARY_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.'\x0d
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-c++.exe  -Wl,-gc-sections -T "C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_67cf1   && cd ."
         Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe
-        COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe
+        COLLECT_GCC=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-c++.exe
+        COLLECT_LTO_WRAPPER=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe
         Target: arm-none-eabi
-        Configured with: ../gcc-13.3.0/configure --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\\ -static-libgcc\\ \\ -Wl,--stack,12582912' LDFLAGS=' -Wl,--disable-dynamicbase'
+        Configured with: /build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/src/gcc/configure --build=x86_64-linux-gnu --host=x86_64-w64-mingw32 --target=arm-none-eabi --prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw --libexecdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib --infodir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/arm-none-eabi --with-libiconv-prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-gmp=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpfr=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpc=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-isl=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for STM32 12.3.rel1.20240612-1315' --with-multilib-list=rmprofile,aprofile
         Thread model: single
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (GCC) 
-        COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/
-        LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_b4b0a' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_b4b0a.'
-         C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccpsanHO.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -X -o cmTC_b4b0a C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -gc-sections CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o -T C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000\x0d
-        C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_b4b0a has a LOAD segment with RWX permissions\x0d
-        COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_b4b0a' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_b4b0a.'\x0d
+        Supported LTO compression algorithms: zlib
+        gcc version 12.3.1 20230626 (GNU Tools for STM32 12.3.rel1.20240612-1315) 
+        COMPILER_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/
+        LIBRARY_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/
+        COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_67cf1' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_67cf1.'
+         C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/collect2.exe -plugin C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/liblto_plugin.dll -plugin-opt=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccRWHF4u.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc --sysroot=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi -X -o cmTC_67cf1 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crti.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtbegin.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/crt0.o -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1 -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib -gc-sections CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtend.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtn.o -T C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld
+        C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000
+        C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_67cf1 has a LOAD segment with RWX permissions
+        COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_67cf1' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_67cf1.'\x0d
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:7 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0]
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/arm-none-eabi]
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/backward]
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include]
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include-fixed]
-          add: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/arm-none-eabi]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/backward]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/include]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/arm-none-eabi]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/backward]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+          add: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include]
         end of search list found
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0] ==> [C:/msys64/mingw64/arm-none-eabi/include/c++/13.3.0]
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/arm-none-eabi] ==> [C:/msys64/mingw64/arm-none-eabi/include/c++/13.3.0/arm-none-eabi]
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/backward] ==> [C:/msys64/mingw64/arm-none-eabi/include/c++/13.3.0/backward]
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/include]
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include-fixed] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/include-fixed]
-        collapse include dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include] ==> [C:/msys64/mingw64/arm-none-eabi/include]
-        implicit include dirs: [C:/msys64/mingw64/arm-none-eabi/include/c++/13.3.0;C:/msys64/mingw64/arm-none-eabi/include/c++/13.3.0/arm-none-eabi;C:/msys64/mingw64/arm-none-eabi/include/c++/13.3.0/backward;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/include;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/include-fixed;C:/msys64/mingw64/arm-none-eabi/include]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/arm-none-eabi] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1/arm-none-eabi]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/backward] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1/backward]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/include] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/include-fixed] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/arm-none-eabi] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1/arm-none-eabi]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/backward] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1/backward]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include-fixed] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+        collapse include dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include]
+        implicit include dirs: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1/arm-none-eabi;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include/c++/12.3.1/backward;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/include-fixed;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/include]
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:7 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-pwuxjk']
+        ignore line: [Change Dir: 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wdwb46']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/x64/ninja.exe" -v cmTC_b4b0a]
-        ignore line: [[1/2] C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): C:/ST/STM32CubeCLT_1.16.0/Ninja/bin/ninja.exe -v cmTC_67cf1]
+        ignore line: [[1/2] C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-c++.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe]
+        ignore line: [COLLECT_GCC=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-c++.exe]
         ignore line: [Target: arm-none-eabi]
-        ignore line: [Configured with: ../gcc-13.3.0/configure --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\\ -static-libgcc\\ \\ -Wl,--stack,12582912' LDFLAGS=' -Wl,--disable-dynamicbase']
+        ignore line: [Configured with: /build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/src/gcc/configure --build=x86_64-linux-gnu --host=x86_64-w64-mingw32 --target=arm-none-eabi --prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw --libexecdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib --infodir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/arm-none-eabi --with-libiconv-prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-gmp=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpfr=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpc=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-isl=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for STM32 12.3.rel1.20240612-1315' --with-multilib-list=rmprofile,aprofile]
         ignore line: [Thread model: single]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/']
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/cc1plus.exe -quiet -v -iprefix C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/ -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b4b0a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccjngtBy.s]
-        ignore line: [GNU C++17 (GCC) version 13.3.0 (arm-none-eabi)]
-        ignore line: [	compiled by GNU C version 14.1.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 12.3.1 20230626 (GNU Tools for STM32 12.3.rel1.20240612-1315) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_67cf1.dir/']
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/cc1plus.exe -quiet -v -iprefix C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/ -isysroot C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi -D__USES_INITFINI__ C:/Program Files/JetBrains/CLion 2022.3.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_67cf1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o C:\\Users\\Philip\\AppData\\Local\\Temp\\ccfDJm7d.s]
+        ignore line: [GNU C++17 (GNU Tools for STM32 12.3.rel1.20240612-1315) version 12.3.1 20230626 (arm-none-eabi)]
+        ignore line: [	compiled by GNU C version 7.3-win32 20180312  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-        ignore line: [ignoring nonexistent directory "C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/sys-include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/arm-none-eabi"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/backward"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/include-fixed"]
-        ignore line: [ignoring nonexistent directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/sys-include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/mingw64/lib/gcc/../../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include"]
+        ignore line: [ignoring nonexistent directory "C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib/gcc/arm-none-eabi/12.3.1/../../../../include"]
+        ignore line: [ignoring nonexistent directory "C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi/usr/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/arm-none-eabi]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include/c++/13.3.0/backward]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/include-fixed]
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/include]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/arm-none-eabi]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/backward]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/include]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+        ignore line: [ C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/arm-none-eabi]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/c++/12.3.1/backward]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/include-fixed]
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/../../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: 7ba66b05935959252c401a92563e75ee]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/']
-        ignore line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccjngtBy.s]
-        ignore line: [GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (GNU Binutils) 2.43.1]
-        ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.'\x0d]
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe  -Wl -gc-sections -T "C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_b4b0a   && cd ."]
+        ignore line: [GNU C++17 (GNU Tools for STM32 12.3.rel1.20240612-1315) version 12.3.1 20230626 (arm-none-eabi)]
+        ignore line: [	compiled by GNU C version 7.3-win32 20180312  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: e40f213a8b38594a68f1558fe98e1d38]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_67cf1.dir/']
+        ignore line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Philip\\AppData\\Local\\Temp\\ccfDJm7d.s]
+        ignore line: [GNU assembler version 2.40.0 (arm-none-eabi) using BFD version (GNU Tools for STM32 12.3.rel1.20240612-1315) 2.40.0.20230627]
+        ignore line: [COMPILER_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/]
+        ignore line: [LIBRARY_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.'\x0d]
+        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-c++.exe  -Wl -gc-sections -T "C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld" -v CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_67cf1   && cd ."]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\mingw64\\bin\\arm-none-eabi-c++.exe]
-        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe]
+        ignore line: [COLLECT_GCC=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-c++.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe]
         ignore line: [Target: arm-none-eabi]
-        ignore line: [Configured with: ../gcc-13.3.0/configure --prefix=/mingw64 --target=arm-none-eabi --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --disable-libada --with-gnu-as --with-gnu-ld --with-system-zlib --with-newlib --with-headers=/mingw64/arm-none-eabi/include --with-python-dir=share/gcc-arm-none-eabi --with-gmp --with-mpfr --with-mpc --with-isl --with-libelf --enable-gnu-indirect_function --with-multilib-list=rmprofile --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\\ -static-libgcc\\ \\ -Wl,--stack,12582912' LDFLAGS=' -Wl,--disable-dynamicbase']
+        ignore line: [Configured with: /build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/src/gcc/configure --build=x86_64-linux-gnu --host=x86_64-w64-mingw32 --target=arm-none-eabi --prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw --libexecdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/lib --infodir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/info --mandir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/man --htmldir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/html --pdfdir=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-mingw-wildcard --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-headers=yes --with-newlib --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/install-mingw/arm-none-eabi --with-libiconv-prefix=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-gmp=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpfr=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-mpc=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-isl=/build/gnu-tools-for-stm32_12.3.rel1.20240612-1315/build-mingw/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for STM32 12.3.rel1.20240612-1315' --with-multilib-list=rmprofile,aprofile]
         ignore line: [Thread model: single]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (GCC) ]
-        ignore line: [COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_b4b0a' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_b4b0a.']
-        link line: [ C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccpsanHO.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -X -o cmTC_b4b0a C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib -gc-sections CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o -T C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld]
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/collect2.exe] ==> ignore
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 12.3.1 20230626 (GNU Tools for STM32 12.3.rel1.20240612-1315) ]
+        ignore line: [COMPILER_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/]
+        ignore line: [LIBRARY_PATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_67cf1' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_67cf1.']
+        link line: [ C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/collect2.exe -plugin C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/liblto_plugin.dll -plugin-opt=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccRWHF4u.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc --sysroot=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi -X -o cmTC_67cf1 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crti.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtbegin.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/crt0.o -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1 -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib -LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib -gc-sections CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtend.o C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtn.o -T C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/liblto_plugin.dll] ==> ignore
-          arg [-plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccpsanHO.res] ==> ignore
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Philip\\AppData\\Local\\Temp\\ccRWHF4u.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [--sysroot=C:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../arm-none-eabi] ==> ignore
           arg [-X] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_b4b0a] ==> ignore
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o]
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o]
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o]
-          arg [-LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0]
-          arg [-LC:/msys64/mingw64/bin/../lib/gcc] ==> dir [C:/msys64/mingw64/bin/../lib/gcc]
-          arg [-LC:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib]
+          arg [cmTC_67cf1] ==> ignore
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crti.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crti.o]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtbegin.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtbegin.o]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/crt0.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/crt0.o]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib]
+          arg [-LC:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib] ==> dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib]
           arg [-gc-sections] ==> ignore
-          arg [CMakeFiles/cmTC_b4b0a.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_67cf1.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [--start-group] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lc] ==> lib [c]
           arg [--end-group] ==> ignore
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o]
-          arg [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o] ==> obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtend.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtend.o]
+          arg [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtn.o] ==> obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtn.o]
           arg [-T] ==> ignore
-          arg [C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld] ==> ignore
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler]
-        ignore line: [ defaulting to 08000000\x0d]
-        ignore line: [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_b4b0a has a LOAD segment with RWX permissions\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/7_semestr/ZPI/sensor_unit_L0/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_b4b0a' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_b4b0a.'\x0d]
+          arg [C:/Users/Philip/Documents/PWr/Studia/Sem] ==> ignore
+          arg [7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld] ==> ignore
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol Reset_Handler]
+        ignore line: [ defaulting to 08000000]
+        ignore line: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: cmTC_67cf1 has a LOAD segment with RWX permissions]
+        ignore line: [COLLECT_GCC_OPTIONS='-T' 'C:/Users/Philip/Documents/PWr/Studia/Sem 7/ZPI/sensor_unit/STM32L031K6Tx_FLASH.ld' '-v' '-o' 'cmTC_67cf1' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'cmTC_67cf1.'\x0d]
         ignore line: []
         ignore line: []
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crti.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crti.o]
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtbegin.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crtbegin.o]
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/crt0.o] ==> [C:/msys64/mingw64/arm-none-eabi/lib/crt0.o]
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtend.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crtend.o]
-        collapse obj [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/crtn.o] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crtn.o]
-        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0] ==> [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0]
-        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc] ==> [C:/msys64/mingw64/lib/gcc]
-        collapse library dir [C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib] ==> [C:/msys64/mingw64/arm-none-eabi/lib]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crti.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/crti.o]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtbegin.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/crtbegin.o]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/crt0.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib/crt0.o]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtend.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/crtend.o]
+        collapse obj [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/crtn.o] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/crtn.o]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib]
+        collapse library dir [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../arm-none-eabi/lib] ==> [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib]
         implicit libs: [stdc++;m;gcc;c]
-        implicit objs: [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crti.o;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crtbegin.o;C:/msys64/mingw64/arm-none-eabi/lib/crt0.o;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crtend.o;C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0/crtn.o]
-        implicit dirs: [C:/msys64/mingw64/lib/gcc/arm-none-eabi/13.3.0;C:/msys64/mingw64/lib/gcc;C:/msys64/mingw64/arm-none-eabi/lib]
+        implicit objs: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/crti.o;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/crtbegin.o;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib/crt0.o;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/crtend.o;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1/crtn.o]
+        implicit dirs: [C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/12.3.1;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/lib/gcc;C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/arm-none-eabi/lib]
         implicit fwks: []
       
       

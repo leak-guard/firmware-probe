@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 include(stm32l0-arm-toolchain.cmake)
 
 # Configure the project
-project(sensor_unit C CXX ASM)
+project(firmware-probe C CXX ASM)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_C_STANDARD 17)
 

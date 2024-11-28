@@ -10,7 +10,7 @@ set(CMAKE_OBJCOPY arm-none-eabi-objcopy)
 set(CMAKE_OBJDUMP arm-none-eabi-objdump)
 set(CMAKE_SIZE arm-none-eabi-size)
 
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32L031K6Tx_FLASH.ld)
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32L031K6Tx_FLASH_fix.ld)
 
 set(COMMON_FLAGS "-mcpu=cortex-m0plus -mthumb -ffunction-sections -fdata-sections -specs=nosys.specs -specs=nano.specs -lnosys")
 

@@ -94,6 +94,12 @@ void GetDeviceUID(void);
 void ReadDIPSwitch(void);
 void MeasureBatteryVoltage(void);
 void EnterStopMode(void);
+void PullUpEn(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void PullUpDis(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void ADCSleep(void);
+void ADCWakeUp(void);
+void LoRaSleep(void);
+void LoRaWakeUp(void);
 void SendLoRaMessage(uint8_t msg_type, const void* data);
 void BlinkLED(void);
 /* USER CODE END PFP */
@@ -137,7 +143,7 @@ int main(void)
   MX_CRC_Init();
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
-  HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
 
   GetDeviceUID();
 
@@ -157,10 +163,9 @@ int main(void)
 
   SX1278_LoRaEntryTx(&SX1278, 16, 2000);
 
-  SX1278_sleep(&SX1278);
-  HAL_Delay(100); // Wait for the module to sleep
+  LoRaSleep();
 
-  HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+  // HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -169,25 +174,30 @@ int main(void)
   {
     if (StopModeFlag)
     {
+      // ADCSleep();
+      LoRaSleep();
       EnterStopMode();
     }
 
     if (WakeUpFlag)
     {
+      // ADCWakeUp();
+      LoRaWakeUp();
+
       if (PingFlag)
       {
         ReadDIPSwitch();
         MeasureBatteryVoltage();
         // sprintf(buffer, "%s, %s, %s", device_id, dip_id, battery_id);
         SendLoRaMessage(MSG_TYPE_PING, &device_info);
-        BlinkLED();
+        // BlinkLED();
         PingFlag = 0;
       }
       else if (AlarmActiveFlag)
       {
         uint8_t alert = 1;
         SendLoRaMessage(MSG_TYPE_LEAK_ALERT, &alert);
-        BlinkLED();
+        // BlinkLED();
       }
       /*else
       {
@@ -264,6 +274,7 @@ void HAL_RTCEx_WakeUpTimerEventCallback(RTC_HandleTypeDef *hrtc)
   BlinkLED();
   StopModeFlag = 1;
 }
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if (GPIO_Pin == BTN_PING_Pin)
@@ -280,6 +291,47 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     AlarmActiveFlag = 1;
     PingFlag = 0;
   }
+}
+
+void HAL_Delay(uint32_t Delay)
+{
+  uint32_t tickstart = HAL_GetTick();
+  uint32_t wait = Delay;
+
+  if (wait < HAL_MAX_DELAY)
+  {
+    wait += (uint32_t)uwTickFreq;
+  }
+
+  while ((HAL_GetTick() - tickstart) < wait)
+  {
+    __WFI();
+  }
+}
+
+void PullUpEn(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  GPIO_InitStruct.Pin = GPIO_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
+
+  // HAL_Delay(100);
+}
+
+void PullUpDis(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  GPIO_InitStruct.Pin = GPIO_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
+
+  // HAL_Delay(100);
 }
 
 void GetDeviceUID()
@@ -327,6 +379,70 @@ void EnterStopMode()
 
   SystemClock_Config();
   HAL_ResumeTick();
+}
+
+void ADCSleep()
+{
+  HAL_ADCEx_DisableVREFINT();
+
+  HAL_ADC_Stop(&hadc);
+  __HAL_RCC_ADC1_CLK_DISABLE();
+}
+
+void ADCWakeUp()
+{
+  __HAL_RCC_ADC1_CLK_ENABLE();
+
+  HAL_ADCEx_EnableVREFINT();
+
+  HAL_ADCEx_Calibration_Start(&hadc, ADC_SINGLE_ENDED);
+}
+
+void LoRaSleep()
+{
+  SX1278_sleep(&SX1278);
+  HAL_Delay(100);
+
+  // __HAL_RCC_SPI1_CLK_DISABLE();
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+
+  GPIO_InitStruct.Pin = GPIO_PIN_11 | GPIO_PIN_12 | LORA_NSS_Pin;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+}
+
+void LoRaWakeUp()
+{
+  // __HAL_RCC_SPI1_CLK_ENABLE();
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  GPIO_InitStruct.Pin = LORA_NSS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LORA_NSS_GPIO_Port, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF0_SPI1;
+
+  GPIO_InitStruct.Pin = GPIO_PIN_11;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pin = GPIO_PIN_12;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  // MX_SPI1_Init();
 }
 
 void SendLoRaMessage(uint8_t msg_type, const void* data)

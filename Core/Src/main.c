@@ -28,6 +28,7 @@
 /* USER CODE BEGIN Includes */
 #include <stm32l0xx_ll_gpio.h>
 #include <stdio.h>
+#include <string.h>
 #include "SX1278.h"
 /* USER CODE END Includes */
 
@@ -42,6 +43,10 @@
 #define VREF_MEAS_MV        3000U       // VDDA voltage during VREFINT factory calibration in mV.
 
 #define VREFINT_CAL         (*((uint16_t *)0x1FF80078)) // DS12323 Table 17.
+
+#define MSG_TYPE_PING          0x00
+#define MSG_TYPE_BATTERY       0x01
+#define MSG_TYPE_LEAK_ALERT    0x02
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -56,27 +61,30 @@ static uint16_t adcIn17Raw = 0;
 static uint16_t VDDAmV = 0;
 static uint16_t VREFINTmV = 0;
 
-char battery_id[15];
-
 volatile uint8_t StopModeFlag = 1;
 volatile uint8_t WakeUpFlag = 0;
 volatile uint8_t AlarmActiveFlag = 0;
 volatile uint8_t PingFlag = 0;
-
-uint32_t uid[3];
-char device_id[30];
-
-char dip_id[10];
 
 SX1278_hw_t SX1278_hw;
 SX1278_t SX1278;
 
 int ret;
 
-char buffer[512];
+struct DeviceInfo {
+  uint32_t uid[3];
+  uint8_t dip_id;
+  uint16_t bat_mvol;
+} device_info;
 
-int message;
-int message_length;
+struct __attribute__((packed)) MessagePacket {
+  uint8_t type;
+  union {
+    struct DeviceInfo device_info;  // For ping messages
+    uint16_t battery_mv;           // For battery status
+    uint8_t alert;                 // For leak alert
+  } data;
+};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -86,7 +94,7 @@ void GetDeviceUID(void);
 void ReadDIPSwitch(void);
 void MeasureBatteryVoltage(void);
 void EnterStopMode(void);
-void SendLoRaMessage(const char* msg);
+void SendLoRaMessage(uint8_t msg_type, const void* data);
 void BlinkLED(void);
 /* USER CODE END PFP */
 
@@ -170,20 +178,21 @@ int main(void)
       {
         ReadDIPSwitch();
         MeasureBatteryVoltage();
-        sprintf(buffer, "%s, %s, %s", device_id, dip_id, battery_id);
-        SendLoRaMessage(buffer);
+        // sprintf(buffer, "%s, %s, %s", device_id, dip_id, battery_id);
+        SendLoRaMessage(MSG_TYPE_PING, &device_info);
         BlinkLED();
         PingFlag = 0;
       }
       else if (AlarmActiveFlag)
       {
-        SendLoRaMessage("02");
+        uint8_t alert = 1;
+        SendLoRaMessage(MSG_TYPE_LEAK_ALERT, &alert);
         BlinkLED();
       }
-      else
+      /*else
       {
         BlinkLED();
-      }
+      }*/
 
       WakeUpFlag = 0;
       StopModeFlag = 1;
@@ -275,18 +284,19 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 void GetDeviceUID()
 {
-  uid[0] = HAL_GetUIDw0();
-  uid[1] = HAL_GetUIDw1();
-  uid[2] = HAL_GetUIDw2();
+  device_info.uid[0] = HAL_GetUIDw0();
+  device_info.uid[1] = HAL_GetUIDw1();
+  device_info.uid[2] = HAL_GetUIDw2();
 
-  sprintf(device_id, "ID:%lu-%lu-%lu", uid[2], uid[1], uid[0]);
+  // sprintf(device_id, "ID:%lu-%lu-%lu", uid[2], uid[1], uid[0]);
 }
 
 void ReadDIPSwitch()
 {
   uint8_t dip_switch = LL_GPIO_ReadInputPort(ADDR0_GPIO_Port) & 0xFF;
 
-  sprintf(dip_id, "DIP:%u", dip_switch);
+  // sprintf(dip_id, "DIP:%u", dip_switch);
+  device_info.dip_id = dip_switch;
 }
 
 void MeasureBatteryVoltage()
@@ -299,7 +309,8 @@ void MeasureBatteryVoltage()
   VDDAmV = (VREF_MEAS_MV * VREFINT_CAL) / adcIn17Raw;
   VREFINTmV = (VDDAmV * adcIn17Raw) / ADC_FS;
 
-  sprintf(battery_id, "BAT:%umV", VDDAmV);
+  // sprintf(battery_id, "BAT:%umV", VDDAmV);
+  device_info.bat_mvol = VDDAmV;
   HAL_ADC_Stop(&hadc);
 }
 
@@ -318,18 +329,42 @@ void EnterStopMode()
   HAL_ResumeTick();
 }
 
-void SendLoRaMessage(const char* msg)
+void SendLoRaMessage(uint8_t msg_type, const void* data)
 {
   SX1278_standby(&SX1278);
 
   HAL_Delay(200);
 
-  message_length = sprintf(buffer, "%s", msg);
+  struct MessagePacket packet = {0};
+  packet.type = msg_type;
 
-  if (SX1278_LoRaEntryTx(&SX1278, message_length, 2000))
+  size_t send_size = 0;
+
+  switch(msg_type)
   {
-    SX1278_LoRaTxPacket(&SX1278, (uint8_t*)buffer, message_length, 2000);
+    case MSG_TYPE_PING:
+      memcpy(&packet.data.device_info, data, sizeof(struct DeviceInfo));
+      send_size = sizeof(uint8_t) + sizeof(struct DeviceInfo);
+      break;
 
+    case MSG_TYPE_BATTERY:
+      packet.data.battery_mv = *(uint16_t*)data;
+      send_size = sizeof(uint8_t) + sizeof(uint16_t);
+      break;
+
+    case MSG_TYPE_LEAK_ALERT:
+      packet.data.alert = *(uint8_t*)data;
+      send_size = sizeof(uint8_t) + sizeof(uint8_t);
+      break;
+
+    default:
+      // Invalid message type
+      return;
+  }
+
+  if (SX1278_LoRaEntryTx(&SX1278, send_size, 2000))
+  {
+    SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&packet, send_size, 2000);
     HAL_Delay(100);
   }
 
@@ -349,7 +384,8 @@ void BlinkLED()
 
     if (AlarmActiveFlag && (i % 5 == 0))
     {
-      SendLoRaMessage("02");
+      uint8_t alert = 1;
+      SendLoRaMessage(MSG_TYPE_LEAK_ALERT, &alert);
     }
   }
 }

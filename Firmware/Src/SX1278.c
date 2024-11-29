@@ -26,8 +26,7 @@ void SX1278_SPIWrite(SX1278_t *module, uint8_t addr, uint8_t cmd)
   SX1278_hw_SetNSS(module->hw, 1);
 }
 
-void SX1278_SPIBurstRead(SX1278_t *module, uint8_t addr, uint8_t *rxBuf,
-                         uint8_t length)
+void SX1278_SPIBurstRead(SX1278_t *module, uint8_t addr, uint8_t *rxBuf, uint8_t length)
 {
   uint8_t i;
   if (length <= 1)
@@ -46,8 +45,7 @@ void SX1278_SPIBurstRead(SX1278_t *module, uint8_t addr, uint8_t *rxBuf,
   }
 }
 
-void SX1278_SPIBurstWrite(SX1278_t *module, uint8_t addr, uint8_t *txBuf,
-                          uint8_t length)
+void SX1278_SPIBurstWrite(SX1278_t *module, uint8_t addr, uint8_t *txBuf, uint8_t length)
 {
   unsigned char i;
   if (length <= 1)
@@ -86,7 +84,8 @@ void SX1278_config(SX1278_t *module)
 
   // setting base parameter
   SX1278_SPIWrite(
-      module, LR_RegPaConfig,
+      module,
+      LR_RegPaConfig,
       SX1278_Power[module->power]); // Setting output power parameter
 
   SX1278_SPIWrite(module, LR_RegOcp, 0x0B);        // RegOcp,Close Ocp
@@ -125,13 +124,10 @@ void SX1278_config(SX1278_t *module)
   }
 
   SX1278_SPIWrite(module, LR_RegModemConfig3, 0x04);
-  SX1278_SPIWrite(module, LR_RegSymbTimeoutLsb,
-                  0x08); // RegSymbTimeoutLsb Timeout = 0x3FF(Max)
+  SX1278_SPIWrite(module, LR_RegSymbTimeoutLsb, 0x08); // RegSymbTimeoutLsb Timeout = 0x3FF(Max)
   SX1278_SPIWrite(module, LR_RegPreambleMsb, 0x00); // RegPreambleMsb
-  SX1278_SPIWrite(module, LR_RegPreambleLsb,
-                  8); // RegPreambleLsb 8+4=12byte Preamble
-  SX1278_SPIWrite(module, REG_LR_DIOMAPPING2,
-                  0x01); // RegDioMapping2 DIO5=00, DIO4=01
+  SX1278_SPIWrite(module, LR_RegPreambleLsb, 8); // RegPreambleLsb 8+4=12byte Preamble
+  SX1278_SPIWrite(module, REG_LR_DIOMAPPING2, 0x01); // RegDioMapping2 DIO5=00, DIO4=01
   module->readBytes = 0;
   SX1278_standby(module); // Entry standby mode
 }
@@ -167,13 +163,10 @@ int SX1278_LoRaEntryRx(SX1278_t* module, uint8_t length, uint32_t timeout)
   SX1278_config(module);                          // Setting base parameter
   SX1278_SPIWrite(module, REG_LR_PADAC, 0x84);    // Normal and RX
   SX1278_SPIWrite(module, LR_RegHopPeriod, 0xFF); // No FHSS
-  SX1278_SPIWrite(module, REG_LR_DIOMAPPING1,
-                  0x01); // DIO=00,DIO1=00,DIO2=00, DIO3=01
-  SX1278_SPIWrite(module, LR_RegIrqFlagsMask,
-                  0x3F); // Open RxDone interrupt & Timeout
+  SX1278_SPIWrite(module, REG_LR_DIOMAPPING1, 0x01); // DIO=00,DIO1=00,DIO2=00, DIO3=01
+  SX1278_SPIWrite(module, LR_RegIrqFlagsMask, 0x3F); // Open RxDone interrupt & Timeout
   SX1278_clearLoRaIrq(module);
-  SX1278_SPIWrite(module, LR_RegPayloadLength,
-                  length); // Payload Length 21byte(this register must difine
+  SX1278_SPIWrite(module, LR_RegPayloadLength, length); // Payload Length 21byte(this register must difine
                            // when the data long of one byte in SF is 6)
   addr = SX1278_SPIRead(module, LR_RegFifoRxBaseAddr); // Read RxBaseAddr
   SX1278_SPIWrite(module, LR_RegFifoAddrPtr, addr); // RxBaseAddr->FiFoAddrPtr
@@ -208,8 +201,7 @@ uint8_t SX1278_LoRaRxPacket(SX1278_t *module)
     memset(module->rxBuffer, 0x00, SX1278_MAX_PACKET);
 
     addr = SX1278_SPIRead(module, LR_RegFifoRxCurrentaddr); // last packet addr
-    SX1278_SPIWrite(module, LR_RegFifoAddrPtr,
-                    addr); // RxBaseAddr -> FiFoAddrPtr
+    SX1278_SPIWrite(module, LR_RegFifoAddrPtr, addr); // RxBaseAddr -> FiFoAddrPtr
 
     if (module->LoRa_SF == SX1278_LORA_SF_6)
     {
@@ -264,8 +256,7 @@ int SX1278_LoRaEntryTx(SX1278_t *module, uint8_t length, uint32_t timeout)
   }
 }
 
-int SX1278_LoRaTxPacket(SX1278_t *module, uint8_t *txBuffer, uint8_t length,
-                        uint32_t timeout)
+int SX1278_LoRaTxPacket(SX1278_t *module, uint8_t *txBuffer, uint8_t length, uint32_t timeout)
 {
   SX1278_SPIBurstWrite(module, 0x00, txBuffer, length);
   SX1278_SPIWrite(module, LR_RegOpMode, 0x8b); // Tx Mode
@@ -306,8 +297,7 @@ void SX1278_init(SX1278_t *module, uint64_t frequency, uint8_t power,
   SX1278_config(module);
 }
 
-int SX1278_transmit(SX1278_t *module, uint8_t *txBuf, uint8_t length,
-                    uint32_t timeout)
+int SX1278_transmit(SX1278_t *module, uint8_t *txBuf, uint8_t length, uint32_t timeout)
 {
   if (SX1278_LoRaEntryTx(module, length, timeout))
   {

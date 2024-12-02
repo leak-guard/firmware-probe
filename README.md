@@ -13,19 +13,19 @@ https://www.youtube.com/watch?v=jMGnSQyCUqw
 
 # STM32 Setup
 ## 1. System Clock
-### `72 MHz`
+### `HSI 2 MHz`
 
 ## 2. SPI
 ### Mode: Full-Duplex Master
+- Hardware NSS Signal: Disabled
 - Motorola
 - 8 Bits
 - MSB First
-- Prescaler: 8
-- Baud Rate: 9.0 MBits/s
+- Prescaler: 2
+- Baud Rate: 1000.0 KBits/s
 - Clock Polarity (CPOL): Low
 - Clock Phase (CPHA): 1 Edge
 - CRC Calculation: Disabled
-- NSSP Mode: Disabled
 - NSS Signal Type: Software
 
 ### SCK:
@@ -46,6 +46,7 @@ https://www.youtube.com/watch?v=jMGnSQyCUqw
 ## 3. GPIO
 
 ### NSS
+- GPIO_Output
 - GPIO output level: High
 - GPIO mode: Output Push Pull
 - GPIO Pull-up/Pull-down: Pull-up
@@ -53,11 +54,13 @@ https://www.youtube.com/watch?v=jMGnSQyCUqw
 - User Label: NSS
 
 ### DIO0
+- GPIO_EXTI
 - GPIO mode: External Interrupt Mode with Rising edge trigger detection (enable EXTI Interrupt in NVIC!)
 - GPIO Pull-up/Pull-down: No pull-up and no pull-down
 - User Label: DIO0
 
 ### RESET
+- GPIO_Output
 - GPIO output level: High
 - GPIO mode: Output Push Pull
 - GPIO Pull-up/Pull-down: No pull-up and no pull-down

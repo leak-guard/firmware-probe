@@ -25,6 +25,13 @@ struct DeviceInfo {
 } device_info;
 
 
+void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
+{
+  StopModeFlag = 0;
+  WakeUpFlag = 1;
+  AlarmActiveFlag = 1;
+}
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if (GPIO_Pin == BTN_PING_Pin)

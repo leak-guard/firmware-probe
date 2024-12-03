@@ -18,13 +18,13 @@ enum MsgType {
   ALARM = 2
 };
 
-typedef struct Message {
+typedef struct __attribute__((packed)) Message {
   uint8_t MsgType;
   uint32_t uid1;
   uint32_t uid2;
   uint32_t uid3;
-  uint8_t dip_id;
-  uint16_t bat_mvol;
+  uint8_t dipId;
+  uint16_t batMvol;
   uint32_t crc;
 } Message;
 
@@ -35,7 +35,7 @@ void GetDeviceUID(void);
 void ReadDIPSwitch(void);
 void MeasureBatteryVoltage(void);
 void EnterStopMode(void);
-void SendLoRaMessage(struct Message* message);
+void SendLoRaMessage(void);
 void LoRaSleep(void);
 void LoRaWakeUp(void);
 

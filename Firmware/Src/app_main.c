@@ -15,7 +15,6 @@ static uint16_t VREFINTmV = 0;
 SX1278_hw_t SX1278_hw;
 SX1278_t SX1278;
 
-// char buffer[512];
 int ret;
 
 Message msg;
@@ -66,11 +65,9 @@ void LoRaWakeUp()
   HAL_Delay(200);
 }
 
-void SendLoRaMessage(struct Message* message)
+void SendLoRaMessage()
 {
   LoRaWakeUp();
-
-  // uint32_t message_length = sizeof(msg);
 
   if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
   {
@@ -125,8 +122,6 @@ void GetDeviceUID()
   msg.uid1 = HAL_GetUIDw0();
   msg.uid2 = HAL_GetUIDw1();
   msg.uid3 = HAL_GetUIDw2();
-
-  // sprintf(device_id, "ID:%lu-%lu-%lu", uid[2], uid[1], uid[0]);
 }
 
 void ReadDIPSwitch()
@@ -136,8 +131,7 @@ void ReadDIPSwitch()
 
   uint8_t dip_switch = LL_GPIO_ReadInputPort(ADDR0_GPIO_Port) & 0xFF;
 
-  // sprintf(dip_id, "DIP:%u", dip_switch);
-  msg.dip_id = dip_switch;
+  msg.dipId = dip_switch;
 
   PinsToAnalog(GPIOA, pins);
 }
@@ -152,8 +146,7 @@ void MeasureBatteryVoltage()
   VDDAmV = (VREF_MEAS_MV * VREFINT_CAL) / adcIn17Raw;
   VREFINTmV = (VDDAmV * adcIn17Raw) / ADC_FS;
 
-  // sprintf(battery_id, "BAT:%umV", VDDAmV);
-  msg.bat_mvol = VDDAmV;
+  msg.batMvol = VDDAmV;
 }
 
 void DeviceControl_Init(void) {
@@ -193,7 +186,7 @@ void DeviceControl_Process(void) {
 
       ReadDIPSwitch();
       MeasureBatteryVoltage();
-      SendLoRaMessage(&msg);
+      SendLoRaMessage();
     }
 
     WakeUpFlag = 0;

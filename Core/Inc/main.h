@@ -84,6 +84,8 @@ void Error_Handler(void);
 #define BTN_PING_Pin GPIO_PIN_4
 #define BTN_PING_GPIO_Port GPIOB
 #define BTN_PING_EXTI_IRQn EXTI4_15_IRQn
+#define LED_ALARM_Pin GPIO_PIN_6
+#define LED_ALARM_GPIO_Port GPIOB
 #define LORA_RESET_Pin GPIO_PIN_7
 #define LORA_RESET_GPIO_Port GPIOB
 

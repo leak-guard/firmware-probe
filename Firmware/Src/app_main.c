@@ -169,7 +169,7 @@ void DeviceControl_Init(void) {
 
   SX1278.hw = &SX1278_hw;
 
-  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_7,
+  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_12,
               SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 8, SX127X_SYNC_WORD);
 
   SX1278_LoRaEntryTx(&SX1278, 16, 2000);
@@ -187,6 +187,10 @@ void DeviceControl_Process(void) {
     LoRaWakeUp();
 
     if (AlarmActiveFlag) {
+      HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
+      HAL_Delay(100);
+      HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+
       ReadDIPSwitch();
       MeasureBatteryVoltage();
       SendLoRaMessage(&msg);

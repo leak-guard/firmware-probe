@@ -15,15 +15,10 @@ static uint16_t VREFINTmV = 0;
 SX1278_hw_t SX1278_hw;
 SX1278_t SX1278;
 
-char buffer[512];
+// char buffer[512];
 int ret;
 
-struct DeviceInfo {
-  uint32_t uid[3];
-  uint8_t dip_id;
-  uint16_t bat_mvol;
-} device_info;
-
+Message msg;
 
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
@@ -34,17 +29,17 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+  StopModeFlag = 0;
+  WakeUpFlag = 1;
+  AlarmActiveFlag = 1;
+
   if (GPIO_Pin == BTN_PING_Pin)
   {
-    StopModeFlag = 0;
-    WakeUpFlag = 1;
-    AlarmActiveFlag = 1;
+    msg.MsgType = 0;
   }
   else if (GPIO_Pin == WATER_ALARM_IN_Pin)
   {
-    StopModeFlag = 0;
-    WakeUpFlag = 1;
-    AlarmActiveFlag = 1;
+    msg.MsgType = 2;
   }
 }
 
@@ -71,16 +66,15 @@ void LoRaWakeUp()
   HAL_Delay(200);
 }
 
-void SendLoRaMessage(const char* msg)
+void SendLoRaMessage(struct Message* message)
 {
   LoRaWakeUp();
 
-  uint32_t message_length = sprintf(buffer, "%s", msg);
+  // uint32_t message_length = sizeof(msg);
 
-  if (SX1278_LoRaEntryTx(&SX1278, message_length, 2000))
+  if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
   {
-    SX1278_LoRaTxPacket(&SX1278, (uint8_t*)buffer, message_length, 2000);
-
+    SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&msg, sizeof(msg), 2000);
     HAL_Delay(100);
   }
 
@@ -128,9 +122,9 @@ void PinsToAnalog(GPIO_TypeDef* GPIOx, const uint16_t* GPIO_Pins)
 
 void GetDeviceUID()
 {
-  device_info.uid[0] = HAL_GetUIDw0();
-  device_info.uid[1] = HAL_GetUIDw1();
-  device_info.uid[2] = HAL_GetUIDw2();
+  msg.uid1 = HAL_GetUIDw0();
+  msg.uid2 = HAL_GetUIDw1();
+  msg.uid3 = HAL_GetUIDw2();
 
   // sprintf(device_id, "ID:%lu-%lu-%lu", uid[2], uid[1], uid[0]);
 }
@@ -143,7 +137,7 @@ void ReadDIPSwitch()
   uint8_t dip_switch = LL_GPIO_ReadInputPort(ADDR0_GPIO_Port) & 0xFF;
 
   // sprintf(dip_id, "DIP:%u", dip_switch);
-  device_info.dip_id = dip_switch;
+  msg.dip_id = dip_switch;
 
   PinsToAnalog(GPIOA, pins);
 }
@@ -159,7 +153,7 @@ void MeasureBatteryVoltage()
   VREFINTmV = (VDDAmV * adcIn17Raw) / ADC_FS;
 
   // sprintf(battery_id, "BAT:%umV", VDDAmV);
-  device_info.bat_mvol = VDDAmV;
+  msg.bat_mvol = VDDAmV;
 }
 
 void DeviceControl_Init(void) {
@@ -195,13 +189,7 @@ void DeviceControl_Process(void) {
     if (AlarmActiveFlag) {
       ReadDIPSwitch();
       MeasureBatteryVoltage();
-      sprintf(buffer, "%lu-%lu-%lu, %hu, %hu",
-              device_info.uid[0],
-              device_info.uid[1],
-              device_info.uid[2],
-              device_info.dip_id,
-              device_info.bat_mvol);
-      SendLoRaMessage(buffer);
+      SendLoRaMessage(&msg);
     }
 
     WakeUpFlag = 0;

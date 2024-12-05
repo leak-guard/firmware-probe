@@ -154,6 +154,8 @@ void MeasureBatteryVoltage()
 }
 
 void DeviceControl_Init(void) {
+  HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+
   GetDeviceUID();
 
   SX1278_hw.dio0.port = LORA_DIO0_GPIO_Port;

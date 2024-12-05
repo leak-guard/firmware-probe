@@ -19,8 +19,7 @@ __weak void SX1278_hw_init(SX1278_hw_t *hw)
 
 __weak void SX1278_hw_SetNSS(SX1278_hw_t *hw, int value)
 {
-  HAL_GPIO_WritePin(hw->nss.port, hw->nss.pin,
-                    (value == 1) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(hw->nss.port, hw->nss.pin, (value == 1) ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
 
 __weak void SX1278_hw_Reset(SX1278_hw_t *hw)

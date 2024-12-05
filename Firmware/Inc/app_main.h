@@ -3,6 +3,7 @@
 #include <stm32l0xx_ll_gpio.h>
 #include <stm32l0xx_hal.h>
 #include <stdio.h>
+#include <string.h>
 #include "main.h"
 #include "adc.h"
 #include "crc.h"

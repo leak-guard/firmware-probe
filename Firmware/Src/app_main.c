@@ -12,7 +12,7 @@ static uint16_t adcIn17Raw = 0;
 static uint16_t VDDAmV = 0;
 static uint16_t VREFINTmV = 0;
 
-SX1278_hw_t SX1278_hw;
+SX1278_pins_t SX1278_hw;
 SX1278_t SX1278;
 
 int ret;

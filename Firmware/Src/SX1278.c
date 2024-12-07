@@ -1,6 +1,6 @@
 #include "SX1278.h"
-#include <string.h>
-#include <spi.h>
+
+SoftTimer lora_timer;
 
 void SX1278_hw_init(SX1278_pins_t *hw)
 {
@@ -47,7 +47,11 @@ uint8_t SX1278_SPIReadByte(SX1278_pins_t *hw)
 
 void SX1278_DelayMs(uint32_t msec)
 {
-  HAL_Delay(msec);
+  // HAL_Delay(msec);
+  if (SoftTimer_Expired(&lora_timer))
+  {
+    SoftTimer_Start(&lora_timer, msec); // 100ms interval
+  }
 }
 
 int SX1278_GetDIO0(SX1278_pins_t *hw)
@@ -323,6 +327,8 @@ void SX1278_init(SX1278_t *module, uint64_t frequency, uint8_t power,
                  uint8_t LoRa_CRC_sum, uint8_t packetLength,
                  uint8_t sync_word)
 {
+  SoftTimer_Init();
+
   SX1278_hw_init(module->hw);
 
   module->frequency = frequency;

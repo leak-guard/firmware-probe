@@ -27,6 +27,7 @@ target_sources(stm32cubemx INTERFACE
     ../../Core/Src/crc.c
     ../../Core/Src/rtc.c
     ../../Core/Src/spi.c
+    ../../Core/Src/tim.c
     ../../Core/Src/stm32l0xx_it.c
     ../../Core/Src/stm32l0xx_hal_msp.c
     C:/Users/Philip/STM32Cube/Repository/STM32Cube_FW_L0_V1.12.2/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc.c

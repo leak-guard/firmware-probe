@@ -76,6 +76,7 @@ void SendLoRaMessage()
   if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
   {
     SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&msg, sizeof(msg), 2000);
+
     HAL_Delay(100);
   }
 
@@ -197,5 +198,13 @@ void DeviceControl_Process(void) {
 
     WakeUpFlag = 0;
     StopModeFlag = 1;
+  }
+}
+
+void HAL_Delay(uint32_t msec)
+{
+  if (SoftTimer_Expired(&lora_timer))
+  {
+    SoftTimer_Start(&lora_timer, msec); // 100ms interval
   }
 }

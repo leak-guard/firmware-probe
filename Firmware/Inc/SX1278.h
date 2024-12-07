@@ -7,6 +7,9 @@ extern "C" {
 #include <gpio.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
+#include <spi.h>
+#include "soft_timer.h"
 
 #define SX1278_MAX_PACKET 256
 #define SX1278_DEFAULT_TIMEOUT 3000
@@ -257,6 +260,7 @@ typedef struct
 
 } SX1278_t;
 
+extern SoftTimer lora_timer;
 
 void SX1278_hw_init(SX1278_pins_t *hw);
 

@@ -6,6 +6,7 @@
 #include <string.h>
 #include "main.h"
 #include "adc.h"
+#include "tim.h"
 #include "crc.h"
 #include "rtc.h"
 #include "spi.h"

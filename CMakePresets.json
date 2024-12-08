@@ -42,25 +42,25 @@
             "name": "debug-build",
             "configurePreset": "debug",
             "displayName": "Firmware build (Debug)",
-            "targets": [ "sensor_unit.elf" ]
+            "targets": [ "firmware-probe.elf" ]
         },
         {
             "name": "debug-flash",
             "configurePreset": "debug",
             "displayName": "Firmware build & flash (Debug)",
-            "targets": [ "sensor_unit.elf", "flash" ]
+            "targets": [ "firmware-probe.elf", "flash" ]
         },
         {
             "name": "release-build",
             "configurePreset": "release",
             "displayName": "Firmware build (Release)",
-            "targets": [ "sensor_unit.elf" ]
+            "targets": [ "firmware-probe.elf" ]
         },
         {
             "name": "release-flash",
             "configurePreset": "release",
             "displayName": "Firmware build & flash (Release)",
-            "targets": [ "sensor_unit.elf", "flash" ]
+            "targets": [ "firmware-probe.elf", "flash" ]
         }
     ]
 }

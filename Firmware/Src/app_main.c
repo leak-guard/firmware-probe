@@ -15,7 +15,9 @@ static uint16_t VREFINTmV = 0;
 SX1278_pins_t SX1278_hw;
 SX1278_t SX1278;
 
-Message msg;
+int ret;
+
+Message msg __attribute__((aligned(4)));
 
 volatile uint8_t blink_count = 0;
 
@@ -102,9 +104,12 @@ void LoRaWakeUp()
   HAL_Delay(200);
 }
 
-void LoRaSendPacket()
+void SendLoRaMessage()
 {
   LoRaWakeUp();
+
+  msg.crc = HAL_CRC_Calculate(&hcrc, (uint32_t*)&msg,
+    (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
 
   blink_count = 5;
   LedOn();

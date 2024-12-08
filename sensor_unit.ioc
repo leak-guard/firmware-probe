@@ -2,6 +2,8 @@
 CAD.formats=
 CAD.pinconfig=
 CAD.provider=
+CRC.IPParameters=InputDataFormat
+CRC.InputDataFormat=CRC_INPUTDATA_FORMAT_WORDS
 File.Version=6
 GPIO.groupedBy=Group By Peripherals
 KeepUserPlacement=false

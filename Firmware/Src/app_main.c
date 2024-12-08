@@ -19,6 +19,9 @@ int ret;
 
 Message msg;
 
+static AppState_t appState = APP_STATE_IDLE;
+static Timer_t delayTimer;
+
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
   StopModeFlag = 0;
@@ -73,9 +76,15 @@ void SendLoRaMessage()
   memcpy(buffer, &msg, sizeof(Message) - sizeof(uint32_t));
   msg.crc = HAL_CRC_Calculate(&hcrc, buffer, (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
 
-  if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
-  {
-    SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&msg, sizeof(msg), 2000);
+  Timer_t txEntryTimeout;
+  Timer_t txPacketTimeout;
+
+  Timer_Start(&txEntryTimeout, 2000);
+
+  if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), &txEntryTimeout)) {
+    Timer_Start(&txPacketTimeout, 2000);
+
+    SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&msg, sizeof(msg), &txPacketTimeout);
 
     HAL_Delay(100);
   }
@@ -88,7 +97,6 @@ void PullUpEn(GPIO_TypeDef* GPIOx, const uint16_t* GPIO_Pins)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   uint16_t combinedPins = 0;
 
-  // Process pins until we hit a 0 (sentinel value)
   while(*GPIO_Pins != 0) {
     combinedPins |= *GPIO_Pins;
     GPIO_Pins++;
@@ -154,7 +162,8 @@ void MeasureBatteryVoltage()
   msg.batMvol = VDDAmV;
 }
 
-void DeviceControl_Init(void) {
+void DeviceControl_Init(void)
+{
   HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
 
   GetDeviceUID();
@@ -172,39 +181,78 @@ void DeviceControl_Init(void) {
   SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_12,
               SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 8, SX127X_SYNC_WORD);
 
-  SX1278_LoRaEntryTx(&SX1278, 16, 2000);
-
   LoRaSleep();
 }
 
-void DeviceControl_Process(void) {
-  if (StopModeFlag) {
-    LoRaSleep();
-    EnterStopMode();
-  }
-
-  if (WakeUpFlag) {
-    LoRaWakeUp();
-
-    if (AlarmActiveFlag) {
-      HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
-      HAL_Delay(100);
-      HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
-
-      ReadDIPSwitch();
-      MeasureBatteryVoltage();
-      SendLoRaMessage();
-    }
-
-    WakeUpFlag = 0;
-    StopModeFlag = 1;
-  }
-}
-
-void HAL_Delay(uint32_t msec)
+void DeviceControl_Process(void)
 {
-  if (SoftTimer_Expired(&lora_timer))
+  static Timer_t loraTimer;
+  static bool messageInitiated = false;
+
+  switch (appState)
   {
-    SoftTimer_Start(&lora_timer, msec); // 100ms interval
+    case APP_STATE_IDLE:
+      if (WakeUpFlag)
+      {
+        SX1278_standby(&SX1278);
+        Timer_Start(&loraTimer, 200);
+        appState = APP_STATE_MEASURE;
+      }
+      break;
+
+    case APP_STATE_MEASURE:
+      if (Timer_Expired(&loraTimer))
+      {
+        ReadDIPSwitch();
+        MeasureBatteryVoltage();
+
+        uint32_t buffer[sizeof(Message)/sizeof(uint32_t)];
+        memcpy(buffer, &msg, sizeof(Message) - sizeof(uint32_t));
+        msg.crc = HAL_CRC_Calculate(&hcrc, buffer, (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
+
+        Timer_Start(&loraTimer, 2000);
+        messageInitiated = false;
+        appState = APP_STATE_SEND;
+      }
+      break;
+
+    case APP_STATE_SEND:
+      if (!messageInitiated)
+      {
+        if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), &loraTimer) == 1)
+        {
+          messageInitiated = true;
+          Timer_Start(&loraTimer, 2000);
+        }
+      } else {
+        int txResult = SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&msg, sizeof(msg), &loraTimer);
+        if (txResult == 1)
+        {
+          HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
+          HAL_Delay(100);
+          HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+
+          Timer_Start(&loraTimer, 100);
+          appState = APP_STATE_SLEEP;
+        } else if (txResult == 0)
+        {
+          appState = APP_STATE_IDLE;
+        }
+      }
+      break;
+
+    case APP_STATE_SLEEP:
+      if (Timer_Expired(&loraTimer))
+      {
+        SX1278_sleep(&SX1278);
+        StopModeFlag = 1;
+        WakeUpFlag = 0;
+        appState = APP_STATE_IDLE;
+      }
+      break;
+
+    default:
+      appState = APP_STATE_IDLE;
+      break;
   }
 }

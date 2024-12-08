@@ -14,6 +14,14 @@
 #include "SX1278.h"
 
 
+typedef enum {
+  APP_STATE_IDLE,
+  APP_STATE_MEASURE,
+  APP_STATE_SEND,
+  APP_STATE_SLEEP,
+} AppState_t;
+
+
 enum MsgType {
   PING = 0,
   BATTERY = 1,

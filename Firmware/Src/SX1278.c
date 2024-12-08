@@ -1,6 +1,13 @@
 #include "SX1278.h"
 
-SoftTimer lora_timer;
+void Timer_Start(Timer_t *timer, uint32_t delay) {
+  timer->start = HAL_GetTick();
+  timer->delay = delay;
+}
+
+bool Timer_Expired(Timer_t *timer) {
+  return (HAL_GetTick() - timer->start) >= timer->delay;
+}
 
 void SX1278_hw_init(SX1278_pins_t *hw)
 {
@@ -47,11 +54,7 @@ uint8_t SX1278_SPIReadByte(SX1278_pins_t *hw)
 
 void SX1278_DelayMs(uint32_t msec)
 {
-  // HAL_Delay(msec);
-  if (SoftTimer_Expired(&lora_timer))
-  {
-    SoftTimer_Start(&lora_timer, msec); // 100ms interval
-  }
+  HAL_Delay(msec);
 }
 
 int SX1278_GetDIO0(SX1278_pins_t *hw)
@@ -195,40 +198,47 @@ void SX1278_clearLoRaIrq(SX1278_t *module)
   SX1278_SPIWrite(module, LR_RegIrqFlags, 0xFF);
 }
 
-int SX1278_LoRaEntryRx(SX1278_t* module, uint8_t length, uint32_t timeout)
-{
-  uint8_t addr;
+int SX1278_LoRaEntryRx(SX1278_t *module, uint8_t length, Timer_t *timeout) {
+  static LoraState_t state = LORA_STATE_IDLE;
 
-  module->packetLength = length;
-
-  SX1278_config(module);                          // Setting base parameter
-  SX1278_SPIWrite(module, REG_LR_PADAC, 0x84);    // Normal and RX
-  SX1278_SPIWrite(module, LR_RegHopPeriod, 0xFF); // No FHSS
-  SX1278_SPIWrite(module, REG_LR_DIOMAPPING1, 0x01); // DIO=00,DIO1=00,DIO2=00, DIO3=01
-  SX1278_SPIWrite(module, LR_RegIrqFlagsMask, 0x3F); // Open RxDone interrupt & Timeout
-  SX1278_clearLoRaIrq(module);
-  SX1278_SPIWrite(module, LR_RegPayloadLength, length);
-                  // Payload Length 21byte(this register must be defined when the data length of one byte in SF is 6)
-  addr = SX1278_SPIRead(module, LR_RegFifoRxBaseAddr); // Read RxBaseAddr
-  SX1278_SPIWrite(module, LR_RegFifoAddrPtr, addr); // RxBaseAddr->FiFoAddrPtr
-  SX1278_SPIWrite(module, LR_RegOpMode, 0x8d);      // Mode//Low Frequency Mode
-  // SX1278_SPIWrite(module, LR_RegOpMode,0x05);	//Continuous Rx Mode //High Frequency Mode
-  module->readBytes = 0;
-
-  while (1) {
-    if ((SX1278_SPIRead(module, LR_RegModemStat) & 0x04) == 0x04)
-    { // Rx-on going RegModemStat
-      module->status = RX;
-      return 1;
-    }
-    if (--timeout == 0)
-    {
-      SX1278_Reset(module->hw);
+  switch (state) {
+    case LORA_STATE_IDLE:
+      module->packetLength = length;
       SX1278_config(module);
-      return 0;
-    }
-    SX1278_DelayMs(1);
+      SX1278_SPIWrite(module, REG_LR_PADAC, 0x84); // Normal and RX
+      SX1278_SPIWrite(module, LR_RegHopPeriod, 0xFF);
+      SX1278_SPIWrite(module, REG_LR_DIOMAPPING1, 0x01);
+      SX1278_SPIWrite(module, LR_RegIrqFlagsMask, 0x3F);
+      SX1278_clearLoRaIrq(module);
+      SX1278_SPIWrite(module, LR_RegPayloadLength, length);
+      uint8_t addr = SX1278_SPIRead(module, LR_RegFifoRxBaseAddr);
+      SX1278_SPIWrite(module, LR_RegFifoAddrPtr, addr);
+      SX1278_SPIWrite(module, LR_RegOpMode, 0x8D);
+      Timer_Start(timeout, 2000); // Initialize the timer
+      state = LORA_STATE_PREPARE_RX;
+      break;
+
+    case LORA_STATE_PREPARE_RX:
+      if ((SX1278_SPIRead(module, LR_RegModemStat) & 0x04) == 0x04) {
+        module->status = RX;
+        state = LORA_STATE_IDLE;
+        return 1; // Success
+      }
+
+      if (Timer_Expired(timeout)) {
+        SX1278_Reset(module->hw);
+        SX1278_config(module);
+        state = LORA_STATE_IDLE;
+        return 0; // Timeout
+      }
+      break;
+
+    default:
+      state = LORA_STATE_IDLE;
+      break;
   }
+
+  return -1; // Still processing
 }
 
 uint8_t SX1278_LoRaRxPacket(SX1278_t *module)
@@ -261,65 +271,63 @@ uint8_t SX1278_LoRaRxPacket(SX1278_t *module)
   return module->readBytes;
 }
 
-int SX1278_LoRaEntryTx(SX1278_t *module, uint8_t length, uint32_t timeout)
-{
-  uint8_t addr;
+int SX1278_LoRaEntryTx(SX1278_t *module, uint8_t length, Timer_t *timeout) {
   uint8_t temp;
 
   module->packetLength = length;
 
-  SX1278_config(module);                                              // setting base parameter
-
-  SX1278_SPIWrite(module, REG_LR_PADAC, 0x87);              // Tx for 20dBm
-  SX1278_SPIWrite(module, LR_RegHopPeriod, 0x00);           // RegHopPeriod NO FHSS
-  SX1278_SPIWrite(module, REG_LR_DIOMAPPING1, 0x41);        // DIO0=01, DIO1=00, DIO2=00, DIO3=01
+  SX1278_config(module);
+  SX1278_SPIWrite(module, REG_LR_PADAC, 0x87);
+  SX1278_SPIWrite(module, LR_RegHopPeriod, 0x00);
+  SX1278_SPIWrite(module, REG_LR_DIOMAPPING1, 0x41);  // DIO0=01, DIO1=00, DIO2=00, DIO3=01
   SX1278_clearLoRaIrq(module);
+  SX1278_SPIWrite(module, LR_RegIrqFlagsMask, 0xF7);  // Open TxDone interrupt
+  SX1278_SPIWrite(module, LR_RegPayloadLength, length);
 
-  SX1278_SPIWrite(module, LR_RegIrqFlagsMask, 0xF7);        // Open TxDone interrupt
-  SX1278_SPIWrite(module, LR_RegPayloadLength, length);     // RegPayloadLength 21byte
-  addr = SX1278_SPIRead(module, LR_RegFifoTxBaseAddr);           // RegFiFoTxBaseAddr
-  SX1278_SPIWrite(module, LR_RegFifoAddrPtr, addr);         // RegFifoAddrPtr
+  uint8_t addr = SX1278_SPIRead(module, LR_RegFifoTxBaseAddr);
+  SX1278_SPIWrite(module, LR_RegFifoAddrPtr, addr);
 
-  while (1)
-  {
-    temp = SX1278_SPIRead(module, LR_RegPayloadLength);
-    if (temp == length)
-    {
-      module->status = TX;
-      return 1;
-    }
-
-    if (--timeout == 0)
-    {
-      SX1278_Reset(module->hw);
-      SX1278_config(module);
-      return 0;
-    }
+  temp = SX1278_SPIRead(module, LR_RegPayloadLength);
+  if (temp == length) {
+    module->status = TX;
+    return 1;
   }
+
+  if (Timer_Expired(timeout)) {
+    SX1278_Reset(module->hw);
+    SX1278_config(module);
+    return 0;
+  }
+
+  return -1;
 }
 
-int SX1278_LoRaTxPacket(SX1278_t *module, uint8_t *txBuffer, uint8_t length, uint32_t timeout)
-{
-  SX1278_SPIBurstWrite(module, 0x00, txBuffer, length);
-  SX1278_SPIWrite(module, LR_RegOpMode, 0x8b);      // Tx Mode
-  while (1)
-  {
-    if (SX1278_GetDIO0(module->hw))
-    { // if(Get_NIRQ())                     //Packet send over
-      SX1278_SPIRead(module, LR_RegIrqFlags);
-      SX1278_clearLoRaIrq(module);          // Clear irq
-      SX1278_standby(module);               // Entry Standby mode
-      return 1;
-    }
+int SX1278_LoRaTxPacket(SX1278_t *module, uint8_t *txBuffer, uint8_t length, Timer_t *timeout) {
+  static bool dataWritten = false;
 
-    if (--timeout == 0)
-    {
-      SX1278_Reset(module->hw);
-      SX1278_config(module);
-      return 0;
-    }
-    SX1278_DelayMs(1);
+  if (!dataWritten) {
+    SX1278_SPIBurstWrite(module, 0x00, txBuffer, length);
+    SX1278_SPIWrite(module, LR_RegOpMode, 0x8b);  // Tx Mode
+    dataWritten = true;
+    return -1;
   }
+
+  if (SX1278_GetDIO0(module->hw)) {
+    SX1278_SPIRead(module, LR_RegIrqFlags);
+    SX1278_clearLoRaIrq(module);
+    SX1278_standby(module);
+    dataWritten = false;
+    return 1;
+  }
+
+  if (Timer_Expired(timeout)) {
+    SX1278_Reset(module->hw);
+    SX1278_config(module);
+    dataWritten = false;
+    return 0;
+  }
+
+  return -1;
 }
 
 void SX1278_init(SX1278_t *module, uint64_t frequency, uint8_t power,
@@ -327,8 +335,6 @@ void SX1278_init(SX1278_t *module, uint64_t frequency, uint8_t power,
                  uint8_t LoRa_CRC_sum, uint8_t packetLength,
                  uint8_t sync_word)
 {
-  SoftTimer_Init();
-
   SX1278_hw_init(module->hw);
 
   module->frequency = frequency;
@@ -343,18 +349,27 @@ void SX1278_init(SX1278_t *module, uint64_t frequency, uint8_t power,
   SX1278_config(module);
 }
 
-int SX1278_transmit(SX1278_t *module, uint8_t *txBuf, uint8_t length, uint32_t timeout)
-{
-  if (SX1278_LoRaEntryTx(module, length, timeout))
-  {
-    return SX1278_LoRaTxPacket(module, txBuf, length, timeout);
+int SX1278_transmit(SX1278_t *module, uint8_t *txBuf, uint8_t length, Timer_t *timeout) {
+  Timer_t txEntryTimeout;
+  Timer_t txPacketTimeout;
+
+  Timer_Start(&txEntryTimeout, timeout->delay);
+
+  if (SX1278_LoRaEntryTx(module, length, &txEntryTimeout)) {
+    Timer_Start(&txPacketTimeout, timeout->delay);
+
+    return SX1278_LoRaTxPacket(module, txBuf, length, &txPacketTimeout);
   }
+
   return 0;
 }
 
-int SX1278_receive(SX1278_t *module, uint8_t length, uint32_t timeout)
-{
-  return SX1278_LoRaEntryRx(module, length, timeout);
+int SX1278_receive(SX1278_t *module, uint8_t length, uint32_t timeout) {
+  Timer_t rxTimeout;
+
+  Timer_Start(&rxTimeout, timeout);
+
+  return SX1278_LoRaEntryRx(module, length, &rxTimeout);
 }
 
 uint8_t SX1278_available(SX1278_t *module)

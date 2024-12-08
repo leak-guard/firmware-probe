@@ -9,7 +9,6 @@ extern "C" {
 #include <stdint.h>
 #include <string.h>
 #include <spi.h>
-#include "soft_timer.h"
 
 #define SX1278_MAX_PACKET 256
 #define SX1278_DEFAULT_TIMEOUT 3000
@@ -260,7 +259,23 @@ typedef struct
 
 } SX1278_t;
 
-extern SoftTimer lora_timer;
+typedef enum {
+  LORA_STATE_IDLE,
+  LORA_STATE_PREPARE_TX,
+  LORA_STATE_WAIT_TX_DONE,
+  LORA_STATE_PREPARE_RX,
+  LORA_STATE_WAIT_RX_DONE,
+  LORA_STATE_SLEEP,
+} LoraState_t;
+
+// Timer Utility Structure
+typedef struct {
+  uint32_t start;
+  uint32_t delay;
+} Timer_t;
+
+void Timer_Start(Timer_t *timer, uint32_t delay);
+bool Timer_Expired(Timer_t *timer);
 
 void SX1278_hw_init(SX1278_pins_t *hw);
 
@@ -288,19 +303,19 @@ void SX1278_config(SX1278_t *module);
 
 void SX1278_clearLoRaIrq(SX1278_t *module);
 
-int SX1278_LoRaEntryRx(SX1278_t *module, uint8_t length, uint32_t timeout);
+int SX1278_LoRaEntryRx(SX1278_t *module, uint8_t length, Timer_t *timeout);
 
 uint8_t SX1278_LoRaRxPacket(SX1278_t *module);
 
-int SX1278_LoRaEntryTx(SX1278_t *module, uint8_t length, uint32_t timeout);
+int SX1278_LoRaEntryTx(SX1278_t *module, uint8_t length, Timer_t *timeout);
 
-int SX1278_LoRaTxPacket(SX1278_t *module, uint8_t *txBuf, uint8_t length, uint32_t timeout);
+int SX1278_LoRaTxPacket(SX1278_t *module, uint8_t *txBuffer, uint8_t length, Timer_t *timeout);
 
 void SX1278_init(SX1278_t *module, uint64_t frequency, uint8_t power,
                  uint8_t LoRa_SF, uint8_t LoRa_BW, uint8_t LoRa_CR,
                  uint8_t LoRa_CRC_sum, uint8_t packetLength, uint8_t sync_word);
 
-int SX1278_transmit(SX1278_t *module, uint8_t *txBuf, uint8_t length, uint32_t timeout);
+int SX1278_transmit(SX1278_t *module, uint8_t *txBuf, uint8_t length, Timer_t *timeout);
 
 int SX1278_receive(SX1278_t *module, uint8_t length, uint32_t timeout);
 

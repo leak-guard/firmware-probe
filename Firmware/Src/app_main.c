@@ -17,7 +17,7 @@ SX1278_t SX1278;
 
 int ret;
 
-Message msg;
+Message msg __attribute__((aligned(4)));
 
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
@@ -69,9 +69,8 @@ void SendLoRaMessage()
 {
   LoRaWakeUp();
 
-  uint32_t buffer[sizeof(Message)/sizeof(uint32_t)];
-  memcpy(buffer, &msg, sizeof(Message) - sizeof(uint32_t));
-  msg.crc = HAL_CRC_Calculate(&hcrc, buffer, (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
+  msg.crc = HAL_CRC_Calculate(&hcrc, (uint32_t*)&msg, 
+    (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
 
   if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
   {
@@ -168,10 +167,11 @@ void DeviceControl_Init(void) {
 
   SX1278.hw = &SX1278_hw;
 
-  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_12,
-              SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 8, SX127X_SYNC_WORD);
+  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_11DBM, SX1278_LORA_SF_8,
+              SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 
+              sizeof(Message), SX127X_SYNC_WORD);
 
-  SX1278_LoRaEntryTx(&SX1278, 16, 2000);
+  SX1278_LoRaEntryTx(&SX1278, sizeof(Message), 2000);
 
   LoRaSleep();
 }
@@ -187,12 +187,10 @@ void DeviceControl_Process(void) {
 
     if (AlarmActiveFlag) {
       HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
-      HAL_Delay(100);
-      HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
-
       ReadDIPSwitch();
       MeasureBatteryVoltage();
       SendLoRaMessage();
+      HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
     }
 
     WakeUpFlag = 0;

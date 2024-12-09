@@ -73,10 +73,13 @@ void SendLoRaMessage()
   memcpy(buffer, &msg, sizeof(Message) - sizeof(uint32_t));
   msg.crc = HAL_CRC_Calculate(&hcrc, buffer, (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
 
-  if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
+  for (uint8_t i = 0; i < 5; i++)
   {
-    SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&msg, sizeof(msg), 2000);
-    HAL_Delay(100);
+    if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
+    {
+      SX1278_LoRaTxPacket(&SX1278, (uint8_t*)&msg, sizeof(msg), 2000);
+      HAL_Delay(100);
+    }
   }
 
   LoRaSleep();

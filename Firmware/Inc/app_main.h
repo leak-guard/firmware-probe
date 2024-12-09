@@ -14,9 +14,9 @@
 
 
 enum MsgType {
-  PING = 0,
-  BATTERY = 1,
-  ALARM = 2
+  PING = 0, // PAIR: IDs & battery voltage
+  BATTERY = 1, // every 12 hrs
+  ALARM = 2 // also TEST
 };
 
 typedef struct __attribute__((packed)) Message {

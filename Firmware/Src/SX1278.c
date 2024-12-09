@@ -383,3 +383,19 @@ uint8_t SX1278_RSSI(SX1278_t *module)
   temp = 127 - (temp >> 1);       // 127:Max RSSI
   return temp;
 }
+
+void HAL_Delay(uint32_t Delay)
+{
+  uint32_t tickstart = HAL_GetTick();
+  uint32_t wait = Delay;
+
+  if (wait < HAL_MAX_DELAY)
+  {
+    wait += (uint32_t)uwTickFreq;
+  }
+
+  while ((HAL_GetTick() - tickstart) < wait)
+  {
+    __WFI();
+  }
+}

@@ -37,11 +37,12 @@ void GetDeviceUID(void);
 void ReadDIPSwitch(void);
 void MeasureBatteryVoltage(void);
 void EnterStopMode(void);
+void LoraInit(void);
 void LoRaSendPacket(void);
 void LoRaSleep(void);
 void LoRaWakeUp(void);
-void StartBlinkTimer(void);
-void StopBlinkTimer(void);
+void LedOn(void);
+void LedOff(void);
 
 void DeviceControl_Init(void);
 void DeviceControl_Process(void);

@@ -30,7 +30,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
       if (blinks_done >= (blink_count * 2)) {  // *2 because toggle is called for both on and off
         blinks_done = 0;
         blink_count = 0;
-        StopBlinkTimer();
+        LedOff();
       }
     }
   }
@@ -72,6 +72,24 @@ void EnterStopMode()
   HAL_ResumeTick();
 }
 
+void LoraInit()
+{
+  SX1278_hw.dio0.port = LORA_DIO0_GPIO_Port;
+  SX1278_hw.dio0.pin = LORA_DIO0_Pin;
+  SX1278_hw.nss.port = LORA_NSS_GPIO_Port;
+  SX1278_hw.nss.pin = LORA_NSS_Pin;
+  SX1278_hw.reset.port = LORA_RESET_GPIO_Port;
+  SX1278_hw.reset.pin = LORA_RESET_Pin;
+  SX1278_hw.spi = &hspi1;
+
+  SX1278.hw = &SX1278_hw;
+
+  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_12,
+              SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 8, SX127X_SYNC_WORD);
+
+  SX1278_LoRaEntryTx(&SX1278, 16, 2000);
+}
+
 void LoRaSleep()
 {
   SX1278_sleep(&SX1278);
@@ -89,7 +107,7 @@ void LoRaSendPacket()
   LoRaWakeUp();
 
   blink_count = 5;
-  StartBlinkTimer();
+  LedOn();
 
   uint32_t buffer[sizeof(Message)/sizeof(uint32_t)];
   memcpy(buffer, &msg, sizeof(Message) - sizeof(uint32_t));
@@ -146,13 +164,27 @@ void PinsToAnalog(GPIO_TypeDef* GPIOx, const uint16_t* GPIO_Pins)
   // HAL_Delay(100);
 }
 
-void StartBlinkTimer() {
+void LedOn()
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  GPIO_InitStruct.Pin = LED_ALARM_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
   HAL_TIM_Base_Start_IT(&htim2);
 }
 
-void StopBlinkTimer() {
+void LedOff()
+{
   HAL_TIM_Base_Stop_IT(&htim2);
   HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+
+  uint16_t pins[] = { LED_ALARM_Pin, 0 };
+
+  PinsToAnalog(LED_ALARM_GPIO_Port, pins);
 }
 
 void GetDeviceUID()
@@ -192,27 +224,14 @@ void DeviceControl_Init(void) {
 
   GetDeviceUID();
 
-  SX1278_hw.dio0.port = LORA_DIO0_GPIO_Port;
-  SX1278_hw.dio0.pin = LORA_DIO0_Pin;
-  SX1278_hw.nss.port = LORA_NSS_GPIO_Port;
-  SX1278_hw.nss.pin = LORA_NSS_Pin;
-  SX1278_hw.reset.port = LORA_RESET_GPIO_Port;
-  SX1278_hw.reset.pin = LORA_RESET_Pin;
-  SX1278_hw.spi = &hspi1;
-
-  SX1278.hw = &SX1278_hw;
-
-  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_12,
-              SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 8, SX127X_SYNC_WORD);
-
-  SX1278_LoRaEntryTx(&SX1278, 16, 2000);
+  LoraInit();
 
   LoRaSleep();
 }
 
 void DeviceControl_Process(void) {
   if (StopModeFlag) {
-    StopBlinkTimer();
+    LedOff();
     LoRaSleep();
     EnterStopMode();
   }
@@ -221,7 +240,7 @@ void DeviceControl_Process(void) {
     LoRaWakeUp();
 
     if (AlarmActiveFlag) {
-      StartBlinkTimer();
+      LedOn();
 
       ReadDIPSwitch();
       MeasureBatteryVoltage();

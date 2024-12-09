@@ -17,14 +17,21 @@ SX1278_t SX1278;
 
 Message msg;
 
+volatile uint8_t blink_count = 0;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
   if (htim == &htim2)
   {
-    if (AlarmActiveFlag)
-    {
+    static uint8_t blinks_done = 0;
+    if (AlarmActiveFlag && blink_count > 0) {
       HAL_GPIO_TogglePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin);
+      blinks_done++;
+      if (blinks_done >= (blink_count * 2)) {  // *2 because toggle is called for both on and off
+        blinks_done = 0;
+        blink_count = 0;
+        StopBlinkTimer();
+      }
     }
   }
 }
@@ -77,9 +84,12 @@ void LoRaWakeUp()
   HAL_Delay(200);
 }
 
-void SendLoRaMessage()
+void LoRaSendPacket()
 {
   LoRaWakeUp();
+
+  blink_count = 5;
+  StartBlinkTimer();
 
   uint32_t buffer[sizeof(Message)/sizeof(uint32_t)];
   memcpy(buffer, &msg, sizeof(Message) - sizeof(uint32_t));
@@ -215,7 +225,7 @@ void DeviceControl_Process(void) {
 
       ReadDIPSwitch();
       MeasureBatteryVoltage();
-      SendLoRaMessage();
+      LoRaSendPacket();
     }
 
     WakeUpFlag = 0;

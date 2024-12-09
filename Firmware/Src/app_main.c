@@ -15,9 +15,19 @@ static uint16_t VREFINTmV = 0;
 SX1278_pins_t SX1278_hw;
 SX1278_t SX1278;
 
-int ret;
-
 Message msg;
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
+{
+  if (htim == &htim2)
+  {
+    if (AlarmActiveFlag)
+    {
+      HAL_GPIO_TogglePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin);
+    }
+  }
+}
 
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
@@ -126,6 +136,15 @@ void PinsToAnalog(GPIO_TypeDef* GPIOx, const uint16_t* GPIO_Pins)
   // HAL_Delay(100);
 }
 
+void StartBlinkTimer() {
+  HAL_TIM_Base_Start_IT(&htim2);
+}
+
+void StopBlinkTimer() {
+  HAL_TIM_Base_Stop_IT(&htim2);
+  HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+}
+
 void GetDeviceUID()
 {
   msg.uid1 = HAL_GetUIDw0();
@@ -183,6 +202,7 @@ void DeviceControl_Init(void) {
 
 void DeviceControl_Process(void) {
   if (StopModeFlag) {
+    StopBlinkTimer();
     LoRaSleep();
     EnterStopMode();
   }
@@ -191,9 +211,7 @@ void DeviceControl_Process(void) {
     LoRaWakeUp();
 
     if (AlarmActiveFlag) {
-      HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_RESET);
-      HAL_Delay(100);
-      HAL_GPIO_WritePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin, GPIO_PIN_SET);
+      StartBlinkTimer();
 
       ReadDIPSwitch();
       MeasureBatteryVoltage();

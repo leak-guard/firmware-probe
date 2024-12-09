@@ -9,6 +9,7 @@
 #include "crc.h"
 #include "rtc.h"
 #include "spi.h"
+#include "tim.h"
 #include "gpio.h"
 #include "SX1278.h"
 
@@ -39,6 +40,8 @@ void EnterStopMode(void);
 void SendLoRaMessage(void);
 void LoRaSleep(void);
 void LoRaWakeUp(void);
+void StartBlinkTimer(void);
+void StopBlinkTimer(void);
 
 void DeviceControl_Init(void);
 void DeviceControl_Process(void);

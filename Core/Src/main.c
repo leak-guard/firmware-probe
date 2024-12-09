@@ -22,6 +22,7 @@
 #include "crc.h"
 #include "rtc.h"
 #include "spi.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -94,6 +95,7 @@ int main(void)
   MX_ADC_Init();
   MX_CRC_Init();
   MX_RTC_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   DeviceControl_Init();
   /* USER CODE END 2 */

@@ -24,6 +24,8 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
   StopModeFlag = 0;
   WakeUpFlag = 1;
   AlarmActiveFlag = 1;
+
+  msg.MsgType = 1;
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -36,7 +38,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   {
     msg.MsgType = 0;
   }
-  else if (GPIO_Pin == WATER_ALARM_IN_Pin)
+  else if (GPIO_Pin == WATER_ALARM_IN_Pin || GPIO_Pin == BTN_TEST_Pin)
   {
     msg.MsgType = 2;
   }

@@ -76,6 +76,9 @@ void Error_Handler(void);
 #define WATER_ALARM_IN_Pin GPIO_PIN_0
 #define WATER_ALARM_IN_GPIO_Port GPIOB
 #define WATER_ALARM_IN_EXTI_IRQn EXTI0_1_IRQn
+#define BTN_TEST_Pin GPIO_PIN_1
+#define BTN_TEST_GPIO_Port GPIOB
+#define BTN_TEST_EXTI_IRQn EXTI0_1_IRQn
 #define LORA_DIO0_Pin GPIO_PIN_8
 #define LORA_DIO0_GPIO_Port GPIOA
 #define LORA_DIO0_EXTI_IRQn EXTI4_15_IRQn

@@ -120,3 +120,15 @@ Enable or disable Invert the LoRa I and Q signals, by default a invertIQ is `not
 ### LNA Gain
 Set LNA Gain for better RX sensitivity, by default AGC (Automatic Gain Control) is used and LNA gain is not used.
 Supported values are between `0` and `6`. If gain is 0, AGC will be enabled and LNA gain will not be used. Else if gain is from 1 to 6, AGC will be disabled and LNA gain will be used.
+
+## TEST Button simulates ALARM
+Sends: IDs, battery voltage, `ALARM` message type and CRC
+
+## ALARM Pin
+Sends: IDs, battery voltage, `ALARM` message type and CRC
+
+## PING Button
+Sends: IDs, battery voltage, `PING` message type and CRC
+
+## Every 12 hours
+Sends: IDs, battery voltage, `BATTERY` message type and CRC

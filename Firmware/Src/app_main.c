@@ -84,7 +84,7 @@ void LoraInit()
 
   SX1278.hw = &SX1278_hw;
 
-  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_20DBM, SX1278_LORA_SF_12,
+  SX1278_init(&SX1278, SX1278_FREQ_433MHz, SX1278_POWER_11DBM, SX1278_LORA_SF_8,
               SX1278_LORA_BW_125KHZ, SX1278_LORA_CR_4_5, SX1278_LORA_CRC_DIS, 8, SX127X_SYNC_WORD);
 
   SX1278_LoRaEntryTx(&SX1278, 16, 2000);
@@ -113,7 +113,7 @@ void LoRaSendPacket()
   memcpy(buffer, &msg, sizeof(Message) - sizeof(uint32_t));
   msg.crc = HAL_CRC_Calculate(&hcrc, buffer, (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
 
-  for (uint8_t i = 0; i < 5; i++)
+  for (uint8_t i = 0; i < 3; i++)
   {
     if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
     {

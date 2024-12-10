@@ -22,11 +22,11 @@ enum MsgType {
 
 typedef struct __attribute__((packed)) Message {
   uint8_t MsgType;
+  uint8_t dipId;
+  uint16_t batMvol;
   uint32_t uid1;
   uint32_t uid2;
   uint32_t uid3;
-  uint8_t dipId;
-  uint16_t batMvol;
   uint32_t crc;
 } Message;
 

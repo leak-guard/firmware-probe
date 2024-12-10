@@ -104,7 +104,7 @@ void LoRaWakeUp()
   HAL_Delay(200);
 }
 
-void SendLoRaMessage()
+void LoRaSendPacket()
 {
   LoRaWakeUp();
 

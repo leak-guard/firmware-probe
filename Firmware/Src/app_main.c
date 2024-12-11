@@ -6,7 +6,6 @@
 
 volatile uint8_t StopModeFlag = 1;
 volatile uint8_t WakeUpFlag = 0;
-volatile uint8_t AlarmActiveFlag = 0;
 
 static uint16_t adcIn17Raw = 0;
 static uint16_t VDDAmV = 0;
@@ -24,10 +23,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
   if (htim == &htim2)
   {
     static uint8_t blinks_done = 0;
-    if (AlarmActiveFlag && blink_count > 0) {
+    if (WakeUpFlag && blink_count > 0)
+    {
       HAL_GPIO_TogglePin(LED_ALARM_GPIO_Port, LED_ALARM_Pin);
       blinks_done++;
-      if (blinks_done >= (blink_count * 2)) {  // *2 because toggle is called for both on and off
+
+      if (blinks_done >= (blink_count * 2))
+      {
         blinks_done = 0;
         blink_count = 0;
         LedOff();
@@ -40,7 +42,6 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
   StopModeFlag = 0;
   WakeUpFlag = 1;
-  AlarmActiveFlag = 1;
 
   msg.MsgType = 1;
 }
@@ -49,7 +50,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   StopModeFlag = 0;
   WakeUpFlag = 1;
-  AlarmActiveFlag = 1;
 
   if (GPIO_Pin == BTN_PING_Pin)
   {
@@ -102,24 +102,9 @@ void LoRaWakeUp()
   HAL_Delay(200);
 }
 
-void LoRaSendPacket()
+void LoRaSendPacket(uint8_t amount)
 {
-  LoRaWakeUp();
-
-  ReadDIPSwitch();
-  MeasureBatteryVoltage();
-
-  msg.crc = HAL_CRC_Calculate(&hcrc, (uint32_t*)&msg,
-    (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
-
-  blink_count = 5;
-  LedOn();
-
-  uint32_t buffer[sizeof(Message)/sizeof(uint32_t)];
-  memcpy(buffer, &msg, sizeof(Message) - sizeof(uint32_t));
-  msg.crc = HAL_CRC_Calculate(&hcrc, buffer, (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
-
-  for (uint8_t i = 0; i < 3; i++)
+  for (uint8_t i = 0; i < amount; i++)
   {
     if (SX1278_LoRaEntryTx(&SX1278, sizeof(msg), 2000))
     {
@@ -127,8 +112,20 @@ void LoRaSendPacket()
       HAL_Delay(100);
     }
   }
+}
 
-  LoRaSleep();
+void LoRaMessageHandler()
+{
+  ReadDIPSwitch();
+  MeasureBatteryVoltage();
+
+  msg.crc = HAL_CRC_Calculate(&hcrc, (uint32_t*)&msg,
+    (sizeof(Message) - sizeof(uint32_t)) / sizeof(uint32_t));
+
+  blink_count = 3;
+  LedOn();
+
+  LoRaSendPacket(5);
 }
 
 void PullUpEn(GPIO_TypeDef* GPIOx, const uint16_t* GPIO_Pins)
@@ -147,8 +144,6 @@ void PullUpEn(GPIO_TypeDef* GPIOx, const uint16_t* GPIO_Pins)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
-
-  // HAL_Delay(100);
 }
 
 void PinsToAnalog(GPIO_TypeDef* GPIOx, const uint16_t* GPIO_Pins)
@@ -166,8 +161,6 @@ void PinsToAnalog(GPIO_TypeDef* GPIOx, const uint16_t* GPIO_Pins)
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
-
-  // HAL_Delay(100);
 }
 
 void LedOn()
@@ -225,32 +218,33 @@ void MeasureBatteryVoltage()
   msg.batMvol = VDDAmV;
 }
 
-void DeviceControl_Init(void) {
+void DeviceControl_Init(void)
+{
   GetDeviceUID();
 
   LoraInit();
 
   msg.MsgType = 1;
-  LoRaSendPacket();
+  LoRaMessageHandler();
 
   LoRaSleep();
 }
 
-void DeviceControl_Process(void) {
-  if (StopModeFlag) {
+void DeviceControl_Process(void)
+{
+  if (StopModeFlag)
+  {
     LedOff();
     LoRaSleep();
     EnterStopMode();
   }
 
-  if (WakeUpFlag) {
+  if (WakeUpFlag)
+  {
     LoRaWakeUp();
-
-    if (AlarmActiveFlag) {
-      LedOn();
-
-      LoRaSendPacket();
-    }
+    LedOn();
+    LoRaMessageHandler();
+    LoRaSleep();
 
     WakeUpFlag = 0;
     StopModeFlag = 1;

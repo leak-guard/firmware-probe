@@ -38,9 +38,10 @@ void ReadDIPSwitch(void);
 void MeasureBatteryVoltage(void);
 void EnterStopMode(void);
 void LoraInit(void);
-void LoRaSendPacket(void);
 void LoRaSleep(void);
 void LoRaWakeUp(void);
+void LoRaMessageHandler(void);
+void LoRaSendPacket(uint8_t amount);
 void LedOn(void);
 void LedOff(void);
 
